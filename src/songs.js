@@ -14,7 +14,7 @@ export const songs = [
             },
             {
                 notes: [1, 1, 4, 0, 1, 1, 6],
-                lyrics: ['Pi-', '-den', 'pan', '.', 'no', 'les', 'dan'],
+                lyrics: ['Pi-', '-den', 'pan', null, 'no', 'les', 'dan'],
             },
             {
                 notes: [1, 1, 2, 1, 2, 3, 4],

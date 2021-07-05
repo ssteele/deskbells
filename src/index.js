@@ -22,12 +22,10 @@ const createNoteElement = (bell) => {
     return el;
 };
 
-const createLyricElement = (text = '') => {
+const createLyricElement = (text = '&nbsp;') => {
     const el = document.createElement('div');
     el.classList.add('lyric');
-    if (!!text) {
-        el.textContent = text;
-    }
+    el.innerHTML = text || '&nbsp;';
     return el;
 };
 
