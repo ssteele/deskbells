@@ -1,9 +1,24 @@
 
-.circle {
-    border-radius: 50%;
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+}
+
+.note,
+.lyric {
     display: inline-block;
     height: 100px;
     width: 100px;
+}
+
+.note {
+    border-radius: 50%;
+}
+
+.lyric {
+    height: 2rem;
+    padding: 0.5rem 0 1.5rem;
+    text-align: center;
 }
 
 .a {
@@ -32,4 +47,8 @@
 
 .g {
     background-color: #088;
+}
+
+.rest {
+    background-color: #ccc;
 }

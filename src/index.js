@@ -1,103 +1,79 @@
+import { bells } from './bells.js';
+import { songs } from './songs.js';
 
-const songId = 'asserin-asseran';
-const songs = [
-    {
-        id: 'asserin-asseran',
-        name: 'Asserin Asseran',
-        notes: [
-            [1, 1, 4, 0, 1, 1, 6],
-            [1, 1, 2, 1, 2, 3, 4],
-        ],
-    },
-];
+const songId = 'aserrin-aserran';
+const doRenderLyrics = true;
+
 const song = songs.find((s) => {
     return s.id === songId;
 });
-const bells = [
-    {
-        color: null,
-        index: 0,
-        note: null,
-    },
-    {
-        color: 'f00',
-        index: 1,
-        note: 'c',
-    },
-    {
-        color: 'ffa500',
-        index: 2,
-        note: 'd',
-    },
-    {
-        color: 'ff0',
-        index: 3,
-        note: 'e',
-    },
-    {
-        color: '7cfc00',
-        index: 4,
-        note: 'f',
-    },
-    {
-        color: '088',
-        index: 5,
-        note: 'g',
-    },
-    {
-        color: '4b0082',
-        index: 6,
-        note: 'a',
-    },
-    {
-        color: 'f0f',
-        index: 7,
-        note: 'b',
-    },
-    {
-        color: 'f00',
-        index: 8,
-        note: 'c',
-    },
-];
-const notes = document.getElementById('notes');
 
-createLineElement = () => {
+const songEl = document.getElementById('song');
+
+const createLineElement = () => {
     const el = document.createElement('div');
     el.classList.add('line');
     return el;
 };
 
-createBellElement = (bell) => {
+const createNoteElement = (bell) => {
     const el = document.createElement('div');
-    el.classList.add('circle', bell.note);
+    el.classList.add('note', bell.note);
     return el;
 };
 
-renderNote = (lineEl, bells, index = 1) => {
+const createLyricElement = (text = '') => {
+    const el = document.createElement('div');
+    el.classList.add('lyric');
+    if (!!text) {
+        el.textContent = text;
+    }
+    return el;
+};
+
+const renderNote = (lineEl, bells, index = 1) => {
     const bell = bells.find((b) => {
         return b.index === index;
     })
-    return notes.append(createBellElement(bell));
+    lineEl.append(createNoteElement(bell));
+
+    const divs = lineEl.getElementsByTagName('div');
+    const currentNote = divs[divs.length - 1];
+    return currentNote;
 };
 
-renderLine = () => {
-    return notes.append(createLineElement());
+const renderLyric = (lineEl, lyric = ' ') => {
+    lineEl.append(createLyricElement(lyric));
+
+    const divs = lineEl.getElementsByTagName('div');
+    const currentLyric = divs[divs.length - 1];
+    return currentLyric;
 };
 
-renderSong = (song) => {
-    for (let lines of song) {
-        const lineEl = renderLine();
-        let note;
-        if (!Array.isArray(lines)) {
-            note = lines;
+const renderLine = (songEl) => {
+    songEl.append(createLineElement());
+
+    const divs = songEl.getElementsByTagName('div');
+    const currentLine = divs[divs.length - 1];
+    return currentLine;
+};
+
+const renderSong = (song) => {
+    const { lines } = song;
+    for (const { notes, lyrics } of lines) {
+        let lineEl;
+        lineEl = renderLine(songEl);
+        for (const note of notes) {
             renderNote(lineEl, bells, note);
-        } else {
-            for (note of lines) {
-                renderNote(lineEl, bells, note);
+        }
+
+        if (doRenderLyrics) {
+            lineEl = renderLine(songEl);
+            for (const lyric of lyrics) {
+                renderLyric(lineEl, lyric);
             }
         }
     }
 };
 
-renderSong(song.notes);
+renderSong(song);
