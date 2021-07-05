@@ -1,0 +1,36 @@
+
+.circle {
+    background: #f00;
+    border-radius: 50%;
+    display: inline-block;
+    height: 100px;
+    width: 100px;
+}
+
+.a {
+    background-color: #4b0082;
+}
+
+.b {
+    background-color: #f0f;
+}
+
+.c {
+    background-color: #f00;
+}
+
+.d {
+    background-color: #ffa500;
+}
+
+.e {
+    background-color: #ff0;
+}
+
+.f {
+    background: #7cfc00;
+}
+
+.g {
+    background-color: #088;
+}

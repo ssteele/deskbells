@@ -1,0 +1,11 @@
+{
+  "name": "deskbells",
+  "version": "0.0.1",
+  "description": "Transcribe notes to Deskbells",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Steve Steele",
+  "license": "ISC"
+}
