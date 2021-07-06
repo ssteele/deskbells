@@ -18,31 +18,28 @@ const song = songs.find((s) => {
 
 const songEl = document.getElementById('song');
 
+const getCurrentEl = (lineEl, bells, index = 1) => {
+    const divs = lineEl.getElementsByTagName('div');
+    const currentEl = divs[divs.length - 1];
+    return currentEl;
+}
+
 const renderNote = (lineEl, bells, index = 1) => {
     const bell = bells.find((b) => {
         return b.index === index;
     })
     lineEl.append(createNoteElement(bell));
-
-    const divs = lineEl.getElementsByTagName('div');
-    const currentNote = divs[divs.length - 1];
-    return currentNote;
+    return getCurrentEl(lineEl);
 };
 
 const renderLyric = (lineEl, lyric = ' ') => {
     lineEl.append(createLyricElement(lyric));
-
-    const divs = lineEl.getElementsByTagName('div');
-    const currentLyric = divs[divs.length - 1];
-    return currentLyric;
+    return getCurrentEl(lineEl);
 };
 
 const renderLine = (songEl) => {
     songEl.append(createLineElement());
-
-    const divs = songEl.getElementsByTagName('div');
-    const currentLine = divs[divs.length - 1];
-    return currentLine;
+    return getCurrentEl(songEl);
 };
 
 const renderSong = (song) => {

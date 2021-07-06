@@ -14,12 +14,12 @@ body {
 .note,
 .lyric {
     display: inline-block;
-    height: 100px;
     width: 100px;
 }
 
 .note {
     border-radius: 50%;
+    height: 100px;
 }
 
 .lyric {
