@@ -1,33 +1,22 @@
 import { bells } from './bells.js';
 import { songs } from './songs.js';
+import {
+    createLineElement,
+    createNoteElement,
+    createLyricElement,
+} from './elements.js';
 
-const songId = 'aserrin-aserran';
 const doRenderLyrics = true;
+
+const songId = 'twinkle-twinkle';
+// const songId = 'lightly-row';
+// const songId = 'aserrin-aserran';
 
 const song = songs.find((s) => {
     return s.id === songId;
 });
 
 const songEl = document.getElementById('song');
-
-const createLineElement = () => {
-    const el = document.createElement('div');
-    el.classList.add('line');
-    return el;
-};
-
-const createNoteElement = (bell) => {
-    const el = document.createElement('div');
-    el.classList.add('note', bell.note);
-    return el;
-};
-
-const createLyricElement = (text = null) => {
-    const el = document.createElement('div');
-    el.classList.add('lyric');
-    el.innerHTML = text || '&nbsp;';
-    return el;
-};
 
 const renderNote = (lineEl, bells, index = 1) => {
     const bell = bells.find((b) => {
