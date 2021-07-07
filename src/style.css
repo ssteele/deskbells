@@ -28,6 +28,10 @@ body {
     text-align: center;
 }
 
+.rest {
+    background-color: #ccc;
+}
+
 .a {
     background-color: #4b0082;
 }
@@ -56,6 +60,30 @@ body {
     background-color: #088;
 }
 
-.rest {
-    background-color: #ccc;
+.xylophone .a {
+    background-color: #f00;
+}
+
+.xylophone .b {
+    background-color: #b0b;
+}
+
+.xylophone .c {
+    background-color: #00d;
+}
+
+.xylophone .d {
+    background-color: #fff;
+}
+
+.xylophone .e {
+    background-color: #070;
+}
+
+.xylophone .f {
+    background: #ffa500;
+}
+
+.xylophone .g {
+    background-color: #ec0;
 }

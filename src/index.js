@@ -8,15 +8,19 @@ import {
 
 const doRenderLyrics = true;
 
-const songId = 'twinkle-twinkle';
+// const instrument = 'deskbells';
+const instrument = 'xylophone';
+
+// const songId = 'twinkle-twinkle';
 // const songId = 'lightly-row';
-// const songId = 'aserrin-aserran';
+const songId = 'aserrin-aserran';
 
 const song = songs.find((s) => {
     return s.id === songId;
 });
 
 const songEl = document.getElementById('song');
+songEl.classList.add(instrument);
 
 const getCurrentEl = (lineEl, bells, index = 1) => {
     const divs = lineEl.getElementsByTagName('div');
