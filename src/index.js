@@ -8,8 +8,8 @@ import {
 
 const doRenderLyrics = true;
 
-// const instrument = 'deskbells';
-const instrument = 'xylophone';
+let instrument = 'deskbells';
+// instrument = 'xylophone';
 
 // const songId = 'twinkle-twinkle';
 // const songId = 'lightly-row';
