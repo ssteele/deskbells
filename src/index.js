@@ -11,9 +11,10 @@ const doRenderLyrics = true;
 let instrument = 'deskbells';
 // instrument = 'xylophone';
 
-// const songId = 'twinkle-twinkle';
-// const songId = 'lightly-row';
-const songId = 'aserrin-aserran';
+let songId = 'twinkle-twinkle';
+// songId = 'lightly-row';
+// songId = 'aserrin-aserran';
+songId = 'yesterday';
 
 const song = songs.find((s) => {
     return s.id === songId;

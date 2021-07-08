@@ -98,4 +98,42 @@ export const songs = [
             },
         ],
     },
+    {
+        id: 'yesterday',
+        name: 'Yesterday',
+        lines: [
+            {
+                notes: [1, 7, 3, 6, 6, 5, 4],
+                lyrics: ['Yesterday', 'all my', 'trouble seemed', 'so far', 'away', '', 'now it'],
+            },
+            {
+                notes: [5, 1, 1, 7, 6, 2, 4, 1],
+                lyrics: ['looks as though they\'re', 'here to', 'stay', '', 'oh I believe', 'in', 'yes-', '-terday'],
+            },
+            {
+                notes: [1, 7, 3, 6, 6, 5, 4],
+                lyrics: ['Suddenly', 'I\'m not', 'half the man', 'I used to', 'be', '', 'there\'s a'],
+            },
+            {
+                notes: [5, 1, 1, 7, 6, 2, 4, 1],
+                lyrics: ['shadow hanging', 'over me', '', 'oh', 'yesterday', 'came', 'sud-', '-denly'],
+            },
+            {
+                notes: [7, 3, 6, 3, 4, 2, 5, 1],
+                lyrics: ['Why', 'she', 'had', 'to', 'go I don\'t', 'know she', 'wouldn\'t', 'say'],
+            },
+            {
+                notes: [7, 3, 6, 3, 4, 2, 5, 1],
+                lyrics: ['I', 'said', 'some-', '-thing', 'wrong now I', 'long for', 'yesterday', '-ay -ay -ay'],
+            },
+            {
+                notes: [1, 7, 3, 6, 6, 5, 4],
+                lyrics: ['Yesterday', 'love was', 'such an easy', 'game to', 'play', '', 'now I'],
+            },
+            {
+                notes: [5, 1, 1, 7, 6, 2, 4, 1],
+                lyrics: ['need a place to', 'hide away', '', 'oh', 'I belie-', '-ve in', 'yes-', '-terday'],
+            },
+        ],
+    },
 ];
