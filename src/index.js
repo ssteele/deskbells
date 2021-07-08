@@ -14,13 +14,17 @@ let instrument = 'deskbells';
 let songId = 'twinkle-twinkle';
 // songId = 'lightly-row';
 // songId = 'aserrin-aserran';
-songId = 'yesterday';
+// songId = 'yesterday';
+
+// dom elements
+const titleEl = document.getElementById('title');
+const songEl = document.getElementById('song');
 
 const song = songs.find((s) => {
     return s.id === songId;
 });
 
-const songEl = document.getElementById('song');
+titleEl.innerHTML = song.name;
 songEl.classList.add(instrument);
 
 const getCurrentEl = (lineEl, bells, index = 1) => {

@@ -6,9 +6,18 @@ body {
     font-size: 20px;
 }
 
+#title {
+    padding: 2rem 0;
+    text-align: center;
+}
+
 #song {
     padding: 2rem 0;
     text-align: center;
+}
+
+.line {
+    padding: 0 0 1rem;
 }
 
 .note,
@@ -23,9 +32,9 @@ body {
 }
 
 .lyric {
-    height: 2rem;
-    padding: 0.5rem 0 1.5rem;
+    padding: 0 0 1rem;
     text-align: center;
+    vertical-align: middle;
 }
 
 .rest {

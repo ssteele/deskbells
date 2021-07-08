@@ -2,7 +2,7 @@
 export const songs = [
     {
         id: 'twinkle-twinkle',
-        name: 'Twinkle Twinkle Little Star',
+        name: 'Twinkle Twinkle',
         lines: [
             {
                 notes: [1, 1, 5, 5, 6, 6, 5],
