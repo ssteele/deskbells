@@ -10,7 +10,7 @@ import {
 const doRenderLyrics = true;
 let instrument = 'deskbells';
 // instrument = 'xylophone';
-let songId = 'twinkle-twinkle';
+const songId = 'twinkle-twinkle';
 
 const resetSongEl = (songEl) => {
     songEl.innerHTML = '';
@@ -66,24 +66,26 @@ const renderSong = (songEl, song) => {
     }
 };
 
-// dom elements
+// dom elements registry
 const titleEl = document.getElementById('title');
 const songEl = document.getElementById('song');
 
+// song select
 const songOptions = songs.map((s) => {
     return `<option value="${s.id}">${s.name}</option>`;
 });
-
 titleEl.innerHTML = `
     <select name="songs" id="songs">
         ${songOptions}
     </select>
 `;
 
+// handle select events
 document.addEventListener('input', function (e) {
     if (e.target.id === 'songs') {
         renderSong(songEl, getSong(songs, e.target.value));
     }
 }, false);
 
+// initialize
 renderSong(songEl, getSong(songs, songId));
