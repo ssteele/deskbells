@@ -15,18 +15,22 @@ const state = {
 }
 
 // dom elements registry
-const titleEl = document.getElementById('title');
-const instrumentEl = document.getElementById('instrument');
+const instrumentSelectEl = document.getElementById('instrument-select');
+const lyricSelectEl = document.getElementById('lyric-select');
+const songSelectEl = document.getElementById('song-select');
 const songEl = document.getElementById('song');
 
 const resetSongEl = (instrumentId) => {
     songEl.innerHTML = '';
-    songEl.classList = '';
-    songEl.classList.add(instrumentId);
+    songEl.classList = instrumentId;
 }
 
 const setSongId = (songId) => {
     state.songId = songId;
+};
+
+const setDoRenderLyrics = (doRenderLyrics) => {
+    state.doRenderLyrics = doRenderLyrics;
 };
 
 const setInstrumentId = (instrumentId) => {
@@ -63,8 +67,8 @@ const renderLine = (songEl) => {
     return getCurrentEl(songEl);
 };
 
-const renderSong = (song, instrumentId) => {
-    resetSongEl(instrumentId);
+const renderSong = (song) => {
+    resetSongEl(state.instrumentId);
     const { lines } = song;
     for (const { notes, lyrics } of lines) {
         let lineEl;
@@ -86,7 +90,7 @@ const renderSong = (song, instrumentId) => {
 const songOptions = songs.map((s) => {
     return `<option value="${s.id}">${s.name}</option>`;
 });
-titleEl.innerHTML = `
+songSelectEl.innerHTML = `
     <select name="songs" id="songs">
         ${songOptions}
     </select>
@@ -96,10 +100,18 @@ titleEl.innerHTML = `
 const instrumentOptions = instruments.map((i) => {
     return `<option value="${i.id}">${i.name}</option>`;
 });
-instrumentEl.innerHTML = `
+instrumentSelectEl.innerHTML = `
     <select name="instruments" id="instruments">
         ${instrumentOptions}
     </select>
+`;
+
+// lyrics toggle
+lyricSelectEl.innerHTML = `
+    <div>
+        <input type="checkbox" id="lyrics" name="lyrics" checked>
+        <label for="lyrics">Lyrics</label>
+    </div>
 `;
 
 // handle select events
@@ -108,11 +120,14 @@ document.addEventListener('input', function (e) {
         case 'songs':
             setSongId(e.target.value);
 
+        case 'lyrics':
+            setDoRenderLyrics(e.target.checked);
+
         case 'instruments':
             setInstrumentId(e.target.value);
     }
-    renderSong(getSong(songs, state.songId), state.instrumentId);
+    renderSong(getSong(songs, state.songId));
 }, false);
 
 // initialize
-renderSong(getSong(songs, state.songId), state.instrumentId);
+renderSong(getSong(songs, state.songId));

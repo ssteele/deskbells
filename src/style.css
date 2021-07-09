@@ -13,12 +13,17 @@ select {
 }
 
 #panel {
+    font-size: 0.875rem;
     left: 2rem;
     position: absolute;
-    top: 2rem;
+    top: 1.5rem;
 }
 
-#title {
+#panel > div {
+    padding-top: 0.5rem;
+}
+
+#song-select {
     margin: 2rem 0;
     text-align: center;
 }
