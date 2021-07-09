@@ -7,8 +7,16 @@ body {
 }
 
 #title {
-    padding: 2rem 0;
+    margin: 2rem 0;
     text-align: center;
+}
+
+#songs {
+    background-color: rgba(1, 1, 1, 0);
+    border: none;
+    color: #ccc;
+    font-size: 1.5rem;
+    outline: none;
 }
 
 #song {
