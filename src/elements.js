@@ -1,4 +1,3 @@
-
 export const createLineElement = () => {
     const el = document.createElement('div');
     el.classList.add('line');

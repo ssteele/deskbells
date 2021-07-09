@@ -1,4 +1,3 @@
-
 export const bells = [
     {
         index: 0,
