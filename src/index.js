@@ -1,4 +1,5 @@
 import { bells } from './bells.js';
+import { instruments } from './instruments.js';
 import { songs } from './songs.js';
 import {
     createLineElement,
@@ -7,15 +8,30 @@ import {
 } from './elements.js';
 
 // initial config
-const doRenderLyrics = true;
-let instrument = 'deskbells';
-// instrument = 'xylophone';
-const songId = 'twinkle-twinkle';
-
-const resetSongEl = (songEl) => {
-    songEl.innerHTML = '';
-    songEl.classList.add(instrument);
+const state = {
+    doRenderLyrics: true,
+    instrumentId: 'deskbells',
+    songId: 'twinkle-twinkle',
 }
+
+// dom elements registry
+const titleEl = document.getElementById('title');
+const instrumentEl = document.getElementById('instrument');
+const songEl = document.getElementById('song');
+
+const resetSongEl = (instrumentId) => {
+    songEl.innerHTML = '';
+    songEl.classList = '';
+    songEl.classList.add(instrumentId);
+}
+
+const setSongId = (songId) => {
+    state.songId = songId;
+};
+
+const setInstrumentId = (instrumentId) => {
+    state.instrumentId = instrumentId;
+};
 
 const getSong = (songs = [], songId) => {
     return songs.find((s) => {
@@ -47,8 +63,8 @@ const renderLine = (songEl) => {
     return getCurrentEl(songEl);
 };
 
-const renderSong = (songEl, song) => {
-    resetSongEl(songEl);
+const renderSong = (song, instrumentId) => {
+    resetSongEl(instrumentId);
     const { lines } = song;
     for (const { notes, lyrics } of lines) {
         let lineEl;
@@ -57,7 +73,7 @@ const renderSong = (songEl, song) => {
             renderNote(lineEl, bells, note);
         }
 
-        if (doRenderLyrics) {
+        if (state.doRenderLyrics) {
             lineEl = renderLine(songEl);
             for (const lyric of lyrics) {
                 renderLyric(lineEl, lyric);
@@ -65,10 +81,6 @@ const renderSong = (songEl, song) => {
         }
     }
 };
-
-// dom elements registry
-const titleEl = document.getElementById('title');
-const songEl = document.getElementById('song');
 
 // song select
 const songOptions = songs.map((s) => {
@@ -80,12 +92,27 @@ titleEl.innerHTML = `
     </select>
 `;
 
+// instrument select
+const instrumentOptions = instruments.map((i) => {
+    return `<option value="${i.id}">${i.name}</option>`;
+});
+instrumentEl.innerHTML = `
+    <select name="instruments" id="instruments">
+        ${instrumentOptions}
+    </select>
+`;
+
 // handle select events
 document.addEventListener('input', function (e) {
-    if (e.target.id === 'songs') {
-        renderSong(songEl, getSong(songs, e.target.value));
+    switch (e.target.id) {
+        case 'songs':
+            setSongId(e.target.value);
+
+        case 'instruments':
+            setInstrumentId(e.target.value);
     }
+    renderSong(getSong(songs, state.songId), state.instrumentId);
 }, false);
 
 // initialize
-renderSong(songEl, getSong(songs, songId));
+renderSong(getSong(songs, state.songId), state.instrumentId);
