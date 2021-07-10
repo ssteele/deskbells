@@ -19,6 +19,7 @@ const instrumentSelectEl = document.getElementById('instrument-select');
 const lyricSelectEl = document.getElementById('lyric-select');
 const songSelectEl = document.getElementById('song-select');
 const songEl = document.getElementById('song');
+const debugEl = document.getElementById('debug');
 
 const resetSongEl = (instrumentId) => {
     songEl.innerHTML = '';
@@ -129,6 +130,9 @@ document.addEventListener('input', function (e) {
             setInstrumentId(e.target.value);
             break;
     }
+    console.log('state:', state);
+    const debug = JSON.stringify(state);
+    debugEl.innerHTML = `${debug}`;
     renderSong(getSong(songs, state.songId), state);
 }, false);
 
