@@ -7,7 +7,7 @@ import {
     createLyricElement,
 } from './elements.js';
 
-// initial config
+// mutable state
 const state = {
     doRenderLyrics: true,
     instrumentId: 'deskbells',
@@ -67,8 +67,8 @@ const renderLine = (songEl) => {
     return getCurrentEl(songEl);
 };
 
-const renderSong = (song) => {
-    resetSongEl(state.instrumentId);
+const renderSong = (song, { instrumentId, doRenderLyrics }) => {
+    resetSongEl(instrumentId);
     const { lines } = song;
     for (const { notes, lyrics } of lines) {
         let lineEl;
@@ -77,7 +77,7 @@ const renderSong = (song) => {
             renderNote(lineEl, bells, note);
         }
 
-        if (state.doRenderLyrics) {
+        if (doRenderLyrics) {
             lineEl = renderLine(songEl);
             for (const lyric of lyrics) {
                 renderLyric(lineEl, lyric);
@@ -119,15 +119,18 @@ document.addEventListener('input', function (e) {
     switch (e.target.id) {
         case 'songs':
             setSongId(e.target.value);
+            break;
 
         case 'lyrics':
             setDoRenderLyrics(e.target.checked);
+            break;
 
         case 'instruments':
             setInstrumentId(e.target.value);
+            break;
     }
-    renderSong(getSong(songs, state.songId));
+    renderSong(getSong(songs, state.songId), state);
 }, false);
 
 // initialize
-renderSong(getSong(songs, state.songId));
+renderSong(getSong(songs, state.songId), state);
