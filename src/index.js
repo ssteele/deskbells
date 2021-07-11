@@ -123,14 +123,14 @@ lyricToggleEl.innerHTML = `
 // handle song select
 songSelectEl.addEventListener('change', (e) => {
     setSongId(e.target.value);
-    renderSong(getSong(songs, state.songId), state);
+    renderSong(getSong(songs, state.songId), getInstrument(instruments, state.instrumentId), state);
 })
 
 
 // handle instrument select
 instrumentSelectEl.addEventListener('change', (e) => {
     setInstrumentId(e.target.value);
-    renderSong(getSong(songs, state.songId), state);
+    renderSong(getSong(songs, state.songId), getInstrument(instruments, state.instrumentId), state);
 })
 
 // handle lyric toggle
