@@ -1,4 +1,3 @@
-import { bells } from './bells.js';
 import { instruments } from './instruments.js';
 import { songs } from './songs.js';
 import {
@@ -43,17 +42,23 @@ const getSong = (songs = [], songId) => {
     });
 };
 
+const getInstrument = (instruments = [], instrumentId) => {
+    return instruments.find((i) => {
+        return i.id === instrumentId;
+    });
+};
+
 const getCurrentEl = (lineEl) => {
     const divs = lineEl.getElementsByTagName('div');
     const currentEl = divs[divs.length - 1];
     return currentEl;
 }
 
-const renderNote = (lineEl, bells, index = 1) => {
-    const bell = bells.find((b) => {
-        return b.index === index;
+const renderNote = (lineEl, notesMap, index = 1) => {
+    const note = notesMap.find((n) => {
+        return n.index === index;
     })
-    lineEl.append(createNoteElement(bell));
+    lineEl.append(createNoteElement(note));
     return getCurrentEl(lineEl);
 };
 
@@ -67,14 +72,15 @@ const renderLine = (songEl) => {
     return getCurrentEl(songEl);
 };
 
-const renderSong = (song, { instrumentId, doRenderLyrics }) => {
-    resetSongEl(instrumentId);
+const renderSong = (song, instrument, { doRenderLyrics }) => {
     const { lines } = song;
+    const { id: instrumentId, notesMap } = instrument;
+    resetSongEl(instrumentId);
     for (const { notes, lyrics } of lines) {
         let lineEl;
         lineEl = renderLine(songEl);
         for (const note of notes) {
-            renderNote(lineEl, bells, note);
+            renderNote(lineEl, notesMap, note);
         }
 
         if (doRenderLyrics) {
@@ -130,8 +136,8 @@ instrumentSelectEl.addEventListener('change', (e) => {
 // handle lyric toggle
 lyricToggleEl.addEventListener('change', (e) => {
     setDoRenderLyrics(e.target.checked);
-    renderSong(getSong(songs, state.songId), state);
+    renderSong(getSong(songs, state.songId), getInstrument(instruments, state.instrumentId), state);
 })
 
 // initialize
-renderSong(getSong(songs, state.songId), state);
+renderSong(getSong(songs, state.songId), getInstrument(instruments, state.instrumentId), state);
