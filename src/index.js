@@ -15,9 +15,9 @@ const state = {
 }
 
 // dom elements registry
-const instrumentSelectEl = document.getElementById('instrument-select');
-const lyricSelectEl = document.getElementById('lyric-select');
 const songSelectEl = document.getElementById('song-select');
+const instrumentSelectEl = document.getElementById('instrument-select');
+const lyricToggleEl = document.getElementById('lyric-toggle');
 const songEl = document.getElementById('song');
 
 const resetSongEl = (instrumentId) => {
@@ -107,30 +107,31 @@ instrumentSelectEl.innerHTML = `
 `;
 
 // lyrics toggle
-lyricSelectEl.innerHTML = `
+lyricToggleEl.innerHTML = `
     <div>
         <input type="checkbox" id="lyrics" name="lyrics" checked>
         <label for="lyrics">Lyrics</label>
     </div>
 `;
 
-// handle select events
-document.addEventListener('input', function (e) {
-    switch (e.target.id) {
-        case 'songs':
-            setSongId(e.target.value);
-            break;
-
-        case 'lyrics':
-            setDoRenderLyrics(e.target.checked);
-            break;
-
-        case 'instruments':
-            setInstrumentId(e.target.value);
-            break;
-    }
+// handle song select
+songSelectEl.addEventListener('change', (e) => {
+    setSongId(e.target.value);
     renderSong(getSong(songs, state.songId), state);
-}, false);
+})
+
+
+// handle instrument select
+instrumentSelectEl.addEventListener('change', (e) => {
+    setInstrumentId(e.target.value);
+    renderSong(getSong(songs, state.songId), state);
+})
+
+// handle lyric toggle
+lyricToggleEl.addEventListener('change', (e) => {
+    setDoRenderLyrics(e.target.checked);
+    renderSong(getSong(songs, state.songId), state);
+})
 
 // initialize
 renderSong(getSong(songs, state.songId), state);
