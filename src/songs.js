@@ -72,27 +72,27 @@ export const songs = [
         name: 'Aserrin Aserran',
         lines: [
             {
-                notes: [8, 8, 15, 0, 8, 8, 5],
+                notes: [8, 8, 13, 0, 8, 8, 5],
                 lyrics: ['As-', '-er-', '-rin', null, 'as-', '-er-', '-ran'],
             },
             {
-                notes: [8, 8, 10, 8, 10, 13, 15],
+                notes: [8, 8, 10, 8, 10, 12, 13],
                 lyrics: ['Los', 'ma-', '-der-', '-os', 'de', 'San', 'Juan'],
             },
             {
-                notes: [8, 8, 15, 0, 8, 8, 5],
+                notes: [8, 8, 13, 0, 8, 8, 5],
                 lyrics: ['Pi-', '-den', 'pan', null, 'no', 'les', 'dan'],
             },
             {
-                notes: [8, 8, 10, 8, 10, 13, 15],
+                notes: [8, 8, 10, 8, 10, 12, 13],
                 lyrics: ['Pi-', '-den', 'que-', '-so', 'les', 'dan', 'hueso'],
             },
             {
-                notes: [8, 8, 15, 0, 8, 8, 5],
+                notes: [8, 8, 13, 0, 8, 8, 5],
                 lyrics: ['Pi-', '-den', 'vi-', '-no', 'si', 'les', 'dan'],
             },
             {
-                notes: [8, 8, 10, 8, 10, 13, 15],
+                notes: [8, 8, 10, 8, 10, 12, 13],
                 lyrics: ['Se', 'ma-', '-re-', '-an', 'y', 'se', 'van'],
             },
         ],
