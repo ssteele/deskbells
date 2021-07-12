@@ -121,6 +121,15 @@ lyricToggleEl.innerHTML = `
 `;
 
 const transposeSong = (song, instrument) => {
+    const { lines } = song;
+    let allNotes = [];
+    lines.map((line) => {
+        allNotes = [ ...line.notes, ...allNotes ];
+    })
+    const uniqueNotes = [...new Set(allNotes)].sort((a, b) => a - b);
+    console.log('uniqueNotes:', uniqueNotes);
+
+    console.log('instrument:', instrument);
     return song;
 }
 
