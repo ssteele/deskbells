@@ -120,24 +120,34 @@ lyricToggleEl.innerHTML = `
     </div>
 `;
 
+const transposeSong = (song, instrument) => {
+    return song;
+}
+
+const loadSong = (songs, instruments, state) => {
+    const instrument = getInstrument(instruments, state.instrumentId);
+    const song = transposeSong(getSong(songs, state.songId), instrument);
+    renderSong(song, instrument, state);
+}
+
 // handle song select
 songSelectEl.addEventListener('change', (e) => {
     setSongId(e.target.value);
-    renderSong(getSong(songs, state.songId), getInstrument(instruments, state.instrumentId), state);
+    loadSong(songs, instruments, state);
 })
 
 
 // handle instrument select
 instrumentSelectEl.addEventListener('change', (e) => {
     setInstrumentId(e.target.value);
-    renderSong(getSong(songs, state.songId), getInstrument(instruments, state.instrumentId), state);
+    loadSong(songs, instruments, state);
 })
 
 // handle lyric toggle
 lyricToggleEl.addEventListener('change', (e) => {
     setDoRenderLyrics(e.target.checked);
-    renderSong(getSong(songs, state.songId), getInstrument(instruments, state.instrumentId), state);
+    loadSong(songs, instruments, state);
 })
 
 // initialize
-renderSong(getSong(songs, state.songId), getInstrument(instruments, state.instrumentId), state);
+loadSong(songs, instruments, state);
