@@ -125,12 +125,41 @@ const transposeSong = (song, instrument) => {
     let allNotes = [];
     lines.map((line) => {
         allNotes = [ ...line.notes, ...allNotes ];
-    })
+    });
     const uniqueNotes = [...new Set(allNotes)].sort((a, b) => a - b);
-    console.log('uniqueNotes:', uniqueNotes);
 
-    console.log('instrument:', instrument);
-    return song;
+    const { notesMap } = instrument;
+    const instrumentNotes = notesMap.map((nm) => {
+        return nm.index;
+    });
+
+    let alignedIndex;
+    const notesInOctaveCount = 12;
+    for (let i=0 ; i<notesInOctaveCount ; i++) { 
+        if (uniqueNotes.map((e) => {
+            const shift = e + i;
+            return (shift < (notesInOctaveCount + 1)) ? shift : shift - notesInOctaveCount;
+        }).every(e => instrumentNotes.includes(e))) {
+            alignedIndex = i;
+            break;
+        }
+    }
+
+    const transposedSong = { 
+        ...song, 
+        lines: [
+            ...song.lines.map((line) => {
+                return {
+                    ...line,
+                    notes: line.notes.map((e) => {
+                        const shift = e + alignedIndex;
+                        return (shift < (notesInOctaveCount + 1)) ? shift : shift - notesInOctaveCount;
+                    }),
+                };
+            }),
+        ],
+    };
+    return transposedSong;
 }
 
 const loadSong = (songs, instruments, state) => {
