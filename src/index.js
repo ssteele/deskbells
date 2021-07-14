@@ -77,6 +77,27 @@ const renderSong = (song, instrument, { doRenderLyrics }) => {
     }
 };
 
+const transpose = (song, instrument) => {
+    const uniqueNotes = setUniqueNotes(getUniqueNotes(song));
+    const instrumentNotes = mapInstrumentNotes(instrument);
+    const alignments = setTranspositions(getAlignedTranspositions(uniqueNotes, instrumentNotes));
+    if (alignments.length) {
+        return shift(song, alignments[0]);
+    }
+    return false;
+};
+
+const loadSong = (songs, instruments, state) => {
+    const instrument = getInstrument(instruments, state.instrumentId);
+    const song = transpose(getSong(songs, state.songId), instrument);
+    if (!song) {
+        const lineEl = renderLine(songEl);
+        renderLyric(lineEl, 'No valid transpositions for selected instrument');
+        return;
+    }
+    renderSong(song, instrument, state);
+}
+
 // song select
 const songOptions = songs.map((s) => {
     return `<option value="${s.id}">${s.name}</option>`;
@@ -104,23 +125,6 @@ lyricToggleEl.innerHTML = `
         <label for="lyrics">Lyrics</label>
     </div>
 `;
-
-const transpose = (song, instrument) => {
-    const uniqueNotes = setUniqueNotes(getUniqueNotes(song));
-    const instrumentNotes = mapInstrumentNotes(instrument);
-    const alignments = setTranspositions(getAlignedTranspositions(uniqueNotes, instrumentNotes));
-
-    if (alignments.length) {
-        return shift(song, alignments[0]);
-    }
-    return false;
-};
-
-const loadSong = (songs, instruments, state) => {
-    const instrument = getInstrument(instruments, state.instrumentId);
-    const song = transpose(getSong(songs, state.songId), instrument);
-    renderSong(song, instrument, state);
-}
 
 // handle song select
 songSelectEl.addEventListener('change', (e) => {
