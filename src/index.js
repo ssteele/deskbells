@@ -1,10 +1,15 @@
-import { instruments } from './instruments.js';
-import { songs } from './songs.js';
 import {
     createLineElement,
     createNoteElement,
     createLyricElement,
 } from './elements.js';
+import { instruments } from './instruments.js';
+import {
+    getInstrument,
+    getSong,
+    transpose,
+} from './music.js';
+import { songs } from './songs.js';
 
 // mutable state
 const state = {
@@ -24,6 +29,12 @@ const resetSongEl = (instrumentId) => {
     songEl.classList = instrumentId;
 }
 
+const getCurrentEl = (lineEl) => {
+    const divs = lineEl.getElementsByTagName('div');
+    const currentEl = divs[divs.length - 1];
+    return currentEl;
+}
+
 const setSongId = (songId) => {
     state.songId = songId;
 };
@@ -35,24 +46,6 @@ const setDoRenderLyrics = (doRenderLyrics) => {
 const setInstrumentId = (instrumentId) => {
     state.instrumentId = instrumentId;
 };
-
-const getSong = (songs = [], songId) => {
-    return songs.find((s) => {
-        return s.id === songId;
-    });
-};
-
-const getInstrument = (instruments = [], instrumentId) => {
-    return instruments.find((i) => {
-        return i.id === instrumentId;
-    });
-};
-
-const getCurrentEl = (lineEl) => {
-    const divs = lineEl.getElementsByTagName('div');
-    const currentEl = divs[divs.length - 1];
-    return currentEl;
-}
 
 const renderNote = (lineEl, notesMap, index = 1) => {
     const note = notesMap.find((n) => {
@@ -120,51 +113,9 @@ lyricToggleEl.innerHTML = `
     </div>
 `;
 
-const transposeSong = (song, instrument) => {
-    const { lines } = song;
-    let allNotes = [];
-    lines.map((line) => {
-        allNotes = [ ...line.notes, ...allNotes ];
-    });
-    const uniqueNotes = [...new Set(allNotes)].sort((a, b) => a - b);
-
-    const { notesMap } = instrument;
-    const instrumentNotes = notesMap.map((nm) => {
-        return nm.index;
-    });
-
-    let alignedIndex;
-    const notesInOctaveCount = 12;
-    for (let i=0 ; i<notesInOctaveCount ; i++) { 
-        if (uniqueNotes.map((e) => {
-            const shift = e + i;
-            return (shift < (notesInOctaveCount + 1)) ? shift : shift - notesInOctaveCount;
-        }).every(e => instrumentNotes.includes(e))) {
-            alignedIndex = i;
-            break;
-        }
-    }
-
-    const transposedSong = { 
-        ...song, 
-        lines: [
-            ...song.lines.map((line) => {
-                return {
-                    ...line,
-                    notes: line.notes.map((e) => {
-                        const shift = e + alignedIndex;
-                        return (shift < (notesInOctaveCount + 1)) ? shift : shift - notesInOctaveCount;
-                    }),
-                };
-            }),
-        ],
-    };
-    return transposedSong;
-}
-
 const loadSong = (songs, instruments, state) => {
     const instrument = getInstrument(instruments, state.instrumentId);
-    const song = transposeSong(getSong(songs, state.songId), instrument);
+    const song = transpose(getSong(songs, state.songId), instrument);
     renderSong(song, instrument, state);
 }
 
