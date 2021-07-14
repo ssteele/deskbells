@@ -132,7 +132,7 @@ const renderInstrumentSelect = (instruments) => {
 // transposition select
 const renderTranspositionSelect = (transpositions) => {
     const transpositionOptions = transpositions.map((t) => {
-        return `<option value="${t}">Transpose ${t}</option>`;
+        return `<option value="${t}">Transpose +${t}</option>`;
     });
     transpositionSelectEl.innerHTML = `
         <select name="transpositions" id="transpositions">
