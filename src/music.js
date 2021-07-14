@@ -57,14 +57,3 @@ export const shift = (song, shiftValue) => {
         ],
     };
 };
-
-export const transpose = (song, instrument) => {
-    const uniqueNotes = getUniqueNotes(song);
-    const instrumentNotes = mapInstrumentNotes(instrument);
-    const alignments = getAlignedTranspositions(uniqueNotes, instrumentNotes);
-
-    if (alignments.length) {
-        return shift(song, alignments[0]);
-    }
-    return false;
-};

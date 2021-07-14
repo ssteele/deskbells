@@ -5,18 +5,22 @@ import {
 } from './elements.js';
 import { instruments } from './instruments.js';
 import {
+    getAlignedTranspositions,
     getInstrument,
     getSong,
-    transpose,
+    getUniqueNotes,
+    mapInstrumentNotes,
+    shift,
 } from './music.js';
 import { songs } from './songs.js';
-
-// mutable state
-const state = {
-    doRenderLyrics: true,
-    instrumentId: 'deskbells',
-    songId: 'twinkle-twinkle',
-}
+import {
+    setDoRenderLyrics,
+    setInstrumentId,
+    setSongId,
+    setTranspositions,
+    setUniqueNotes,
+    state,
+} from './state.js';
 
 // dom elements registry
 const songSelectEl = document.getElementById('song-select');
@@ -34,18 +38,6 @@ const getCurrentEl = (lineEl) => {
     const currentEl = divs[divs.length - 1];
     return currentEl;
 }
-
-const setSongId = (songId) => {
-    state.songId = songId;
-};
-
-const setDoRenderLyrics = (doRenderLyrics) => {
-    state.doRenderLyrics = doRenderLyrics;
-};
-
-const setInstrumentId = (instrumentId) => {
-    state.instrumentId = instrumentId;
-};
 
 const renderNote = (lineEl, notesMap, index = 1) => {
     const note = notesMap.find((n) => {
@@ -112,6 +104,17 @@ lyricToggleEl.innerHTML = `
         <label for="lyrics">Lyrics</label>
     </div>
 `;
+
+const transpose = (song, instrument) => {
+    const uniqueNotes = setUniqueNotes(getUniqueNotes(song));
+    const instrumentNotes = mapInstrumentNotes(instrument);
+    const alignments = setTranspositions(getAlignedTranspositions(uniqueNotes, instrumentNotes));
+
+    if (alignments.length) {
+        return shift(song, alignments[0]);
+    }
+    return false;
+};
 
 const loadSong = (songs, instruments, state) => {
     const instrument = getInstrument(instruments, state.instrumentId);
