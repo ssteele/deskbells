@@ -4,9 +4,9 @@ export const createLineElement = () => {
     return el;
 };
 
-export const createNoteElement = (bell) => {
+export const createNoteElement = (instrument) => {
     const el = document.createElement('div');
-    el.classList.add('note', bell.note);
+    el.classList.add('note', instrument.note);
     return el;
 };
 

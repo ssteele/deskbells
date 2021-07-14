@@ -3,31 +3,37 @@ export const state = {
     doRenderLyrics: true,
     instrumentId: 'deskbells',
     songId: 'twinkle-twinkle',
-    transpositions: [],
+    transposition: 0,
+    transpositions: [0, 5],
     uniqueNotes: [],
 };
 
-export const setDoRenderLyrics = (doRenderLyrics) => {
-    state.doRenderLyrics = doRenderLyrics;
-    return doRenderLyrics;
+export const setDoRenderLyrics = (doRenderLyrics = true) => {
+    state.doRenderLyrics = !!doRenderLyrics;
+    return state.doRenderLyrics;
 };
 
-export const setInstrumentId = (instrumentId) => {
-    state.instrumentId = instrumentId;
-    return instrumentId;
+export const setInstrumentId = (instrumentId = '') => {
+    state.instrumentId = `${instrumentId}`;
+    return state.instrumentId;
 };
 
-export const setSongId = (songId) => {
-    state.songId = songId;
-    return songId;
+export const setSongId = (songId = '') => {
+    state.songId = `${songId}`;
+    return state.songId;
 };
 
-export const setTranspositions = (transpositions) => {
+export const setTransposition = (transposition = 0) => {
+    state.transposition = +transposition;
+    return state.transposition;
+};
+
+export const setTranspositions = (transpositions = []) => {
     state.transpositions = transpositions;
-    return transpositions;
+    return state.transpositions;
 };
 
-export const setUniqueNotes = (uniqueNotes) => {
+export const setUniqueNotes = (uniqueNotes = []) => {
     state.uniqueNotes = uniqueNotes;
-    return uniqueNotes;
+    return state.uniqueNotes;
 };
