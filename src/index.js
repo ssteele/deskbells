@@ -31,13 +31,13 @@ const songEl = document.getElementById('song');
 const resetSongEl = (instrumentId) => {
     songEl.innerHTML = '';
     songEl.classList = instrumentId;
-}
+};
 
 const getCurrentEl = (lineEl) => {
     const divs = lineEl.getElementsByTagName('div');
     const currentEl = divs[divs.length - 1];
     return currentEl;
-}
+};
 
 const renderNote = (lineEl, notesMap, index = 1) => {
     const note = notesMap.find((n) => {
@@ -96,16 +96,14 @@ const loadSong = (songs, instruments, state) => {
         return;
     }
     renderSong(song, instrument, state);
-}
+};
 
-// song select
-const songOptions = songs.map((s) => {
-    return `<option value="${s.id}">${s.name}</option>`;
-});
-songSelectEl.innerHTML = `
-    <select name="songs" id="songs">
-        ${songOptions}
-    </select>
+// lyrics toggle
+lyricToggleEl.innerHTML = `
+    <div>
+        <input type="checkbox" id="lyrics" name="lyrics" checked>
+        <label for="lyrics">Lyrics</label>
+    </div>
 `;
 
 // instrument select
@@ -118,32 +116,33 @@ instrumentSelectEl.innerHTML = `
     </select>
 `;
 
-// lyrics toggle
-lyricToggleEl.innerHTML = `
-    <div>
-        <input type="checkbox" id="lyrics" name="lyrics" checked>
-        <label for="lyrics">Lyrics</label>
-    </div>
+// song select
+const songOptions = songs.map((s) => {
+    return `<option value="${s.id}">${s.name}</option>`;
+});
+songSelectEl.innerHTML = `
+    <select name="songs" id="songs">
+        ${songOptions}
+    </select>
 `;
-
-// handle song select
-songSelectEl.addEventListener('change', (e) => {
-    setSongId(e.target.value);
-    loadSong(songs, instruments, state);
-})
-
-
-// handle instrument select
-instrumentSelectEl.addEventListener('change', (e) => {
-    setInstrumentId(e.target.value);
-    loadSong(songs, instruments, state);
-})
 
 // handle lyric toggle
 lyricToggleEl.addEventListener('change', (e) => {
     setDoRenderLyrics(e.target.checked);
     loadSong(songs, instruments, state);
-})
+});
+
+// handle instrument select
+instrumentSelectEl.addEventListener('change', (e) => {
+    setInstrumentId(e.target.value);
+    loadSong(songs, instruments, state);
+});
+
+// handle song select
+songSelectEl.addEventListener('change', (e) => {
+    setSongId(e.target.value);
+    loadSong(songs, instruments, state);
+});
 
 // initialize
 loadSong(songs, instruments, state);
