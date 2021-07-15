@@ -102,7 +102,7 @@ const refreshSong = (songs, instruments, state) => {
 const loadSong = (songs, instruments, state) => {
     const instrument = getInstrument(instruments, state.instrumentId);
     const song = getSong(songs, state.songId);
-    const alignment = state.transposition ?? transpose(song, instrument);
+    const alignment = state.transposition ?? setTransposition(transpose(song, instrument));
     const transposedSong = shift(song, alignment);
     if (!transposedSong) {
         const lineEl = renderLine(songEl);
