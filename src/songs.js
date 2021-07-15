@@ -68,6 +68,36 @@ export const songs = [
         ],
     },
     {
+        id: 'song-of-the-wind',
+        name: 'Song of the Wind',
+        lines: [
+            {
+                notes: [1, 3, 5, 6, 8, 8, 8, 8, 8],
+                lyrics: [],
+            },
+            {
+                notes: [10, 6, 1, 10, 8],
+                lyrics: [],
+            },
+            {
+                notes: [10, 6, 1, 10, 8, 0, 8],
+                lyrics: [],
+            },
+            {
+                notes: [6, 6, 6, 6, 5, 5, 5, 5, 3, 3, 3],
+                lyrics: [],
+            },
+            {
+                notes: [1, 5, 8, 8, 6, 6, 6, 6, 5],
+                lyrics: [],
+            },
+            {
+                notes: [5, 5, 5, 3, 3, 3, 1],
+                lyrics: [],
+            },
+        ],
+    },
+    {
         id: 'aserrin-aserran',
         name: 'Aserrin Aserran',
         lines: [
