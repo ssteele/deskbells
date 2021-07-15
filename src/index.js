@@ -85,37 +85,39 @@ const transpose = (song, instrument) => {
     const instrumentNotes = mapInstrumentNotes(instrument);
     const alignments = setTranspositions(getAlignedTranspositions(uniqueNotes, instrumentNotes));
     if (alignments.length) {
-        return shift(song, alignments[0]);
+        return alignments[0];
     }
     return false;
 };
 
-const loadTransposed = (songs, instruments, state) => {
+const refreshSong = (songs, instruments, state) => {
     const instrument = getInstrument(instruments, state.instrumentId);
-    const song = shift(getSong(songs, state.songId), state.transposition);
-    const uniqueNotes = setUniqueNotes(getUniqueNotes(song));
-    const { notesMap } = instrument;
-    renderNotesList(notesMap, uniqueNotes);
-    renderSong(song, instrument, state);
+    const song = getSong(songs, state.songId);
+    const transposedSong = shift(song, state.transposition);
+    const uniqueNotes = setUniqueNotes(getUniqueNotes(transposedSong));
+    renderNotesList(instrument, uniqueNotes);
+    renderSong(transposedSong, instrument, state);
 };
 
 const loadSong = (songs, instruments, state) => {
     const instrument = getInstrument(instruments, state.instrumentId);
-    const song = transpose(getSong(songs, state.songId), instrument);
-    if (!song) {
+    const song = getSong(songs, state.songId);
+    const alignment = state.transposition ?? transpose(song, instrument);
+    const transposedSong = shift(song, alignment);
+    if (!transposedSong) {
         const lineEl = renderLine(songEl);
         renderLyric(lineEl, 'No valid transpositions for selected instrument');
         return;
     }
-    const uniqueNotes = setUniqueNotes(getUniqueNotes(song));
-    const { notesMap } = instrument;
-    renderNotesList(notesMap, uniqueNotes);
+    const uniqueNotes = setUniqueNotes(getUniqueNotes(transposedSong));
+    renderNotesList(instrument, uniqueNotes);
     renderTranspositionSelect(state.transpositions);
-    renderSong(song, instrument, state);
+    renderSong(transposedSong, instrument, state);
 };
 
 // notes list
-const renderNotesList = (notesMap, uniqueNotes) => {
+const renderNotesList = (instrument, uniqueNotes) => {
+    const { notesMap } = instrument;
     const notesList = uniqueNotes.map((n) => {
         const { note } = notesMap.find((nm) => {
             return nm.index === n;
@@ -123,7 +125,7 @@ const renderNotesList = (notesMap, uniqueNotes) => {
         return `<div class="unique-note ${note}"></div>`;
     });
     notesListEl.innerHTML = `
-        <div class="line">
+        <div class="line ${instrument.id}">
             ${notesList.join(' ')}
         </div>
     `;
@@ -178,24 +180,25 @@ const renderSongOptions = (songs) => {
 // handle lyric toggle
 lyricToggleEl.addEventListener('change', (e) => {
     setDoRenderLyrics(e.target.checked);
-    loadSong(songs, instruments, state);
+    refreshSong(songs, instruments, state);
 });
 
 // handle instrument select
 instrumentSelectEl.addEventListener('change', (e) => {
     setInstrumentId(e.target.value);
-    loadSong(songs, instruments, state);
+    refreshSong(songs, instruments, state);
 });
 
 // handle transposition select
 transpositionSelectEl.addEventListener('change', (e) => {
     setTransposition(e.target.value);
-    loadTransposed(songs, instruments, state);
+    refreshSong(songs, instruments, state);
 });
 
 // handle song select
 songSelectEl.addEventListener('change', (e) => {
     setSongId(e.target.value);
+    setTransposition(null);
     loadSong(songs, instruments, state);
 });
 

@@ -3,7 +3,7 @@ export const state = {
     doRenderLyrics: true,
     instrumentId: 'deskbells',
     songId: 'twinkle-twinkle',
-    transposition: 0,
+    transposition: null,
     transpositions: [0, 5],
     uniqueNotes: [],
 };
@@ -23,8 +23,12 @@ export const setSongId = (songId = '') => {
     return state.songId;
 };
 
-export const setTransposition = (transposition = 0) => {
-    state.transposition = +transposition;
+export const setTransposition = (transposition = null) => {
+    if (null === transposition) {
+        state.transposition = null;
+    } else {
+        state.transposition = +transposition;
+    }
     return state.transposition;
 };
 
