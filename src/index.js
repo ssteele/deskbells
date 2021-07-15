@@ -24,6 +24,7 @@ import {
 } from './state.js';
 
 // dom elements registry
+const notesListEl = document.getElementById('notes-list');
 const lyricToggleEl = document.getElementById('lyric-toggle');
 const instrumentSelectEl = document.getElementById('instrument-select');
 const transpositionSelectEl = document.getElementById('transposition-select');
@@ -92,6 +93,9 @@ const transpose = (song, instrument) => {
 const loadTransposed = (songs, instruments, state) => {
     const instrument = getInstrument(instruments, state.instrumentId);
     const song = shift(getSong(songs, state.songId), state.transposition);
+    const uniqueNotes = setUniqueNotes(getUniqueNotes(song));
+    const { notesMap } = instrument;
+    renderNotesList(notesMap, uniqueNotes);
     renderSong(song, instrument, state);
 };
 
@@ -103,8 +107,26 @@ const loadSong = (songs, instruments, state) => {
         renderLyric(lineEl, 'No valid transpositions for selected instrument');
         return;
     }
+    const uniqueNotes = setUniqueNotes(getUniqueNotes(song));
+    const { notesMap } = instrument;
+    renderNotesList(notesMap, uniqueNotes);
     renderTranspositionSelect(state.transpositions);
     renderSong(song, instrument, state);
+};
+
+// notes list
+const renderNotesList = (notesMap, uniqueNotes) => {
+    const notesList = uniqueNotes.map((n) => {
+        const { note } = notesMap.find((nm) => {
+            return nm.index === n;
+        });
+        return `<div class="unique-note ${note}"></div>`;
+    });
+    notesListEl.innerHTML = `
+        <div class="line">
+            ${notesList.join(' ')}
+        </div>
+    `;
 };
 
 // lyrics toggle

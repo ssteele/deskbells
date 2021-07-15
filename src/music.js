@@ -32,8 +32,8 @@ export const getAlignedTranspositions = (uniqueNotes, instrumentNotes) => {
     let alignments = [];
     for (let i=0 ; i<notesInOctaveCount ; i++) { 
         if (uniqueNotes.map((e) => {
-            const shift = e + i;
-            return (shift < (notesInOctaveCount + 1)) ? shift : shift - notesInOctaveCount;
+            const shifted = e + i;
+            return (shifted < (notesInOctaveCount + 1)) ? shifted : shifted - notesInOctaveCount;
         }).every(e => instrumentNotes.includes(e))) {
             alignments.push(i);
         }
@@ -42,13 +42,16 @@ export const getAlignedTranspositions = (uniqueNotes, instrumentNotes) => {
 };
 
 export const shift = (song, shiftValue) => {
-    return { 
+    return {
         ...song, 
         lines: [
             ...song.lines.map((line) => {
                 return {
                     ...line,
                     notes: line.notes.map((e) => {
+                        if (0 === e) {
+                            return 0;
+                        }
                         const shifted = e + shiftValue;
                         return (shifted < (notesInOctaveCount + 1)) ? shifted : shifted - notesInOctaveCount;
                     }),

@@ -52,6 +52,13 @@ select {
     height: 100px;
 }
 
+.unique-note {
+    border-radius: 50%;
+    display: inline-block;
+    height: 25px;
+    width: 25px;
+}
+
 .lyric {
     padding: 0 0 1rem;
     text-align: center;

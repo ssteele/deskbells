@@ -34,6 +34,7 @@ export const setTranspositions = (transpositions = []) => {
 };
 
 export const setUniqueNotes = (uniqueNotes = []) => {
-    state.uniqueNotes = uniqueNotes;
+    const filteredUniqueNotes = uniqueNotes.filter((n) => n !== 0);
+    state.uniqueNotes = filteredUniqueNotes;
     return state.uniqueNotes;
 };
