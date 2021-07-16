@@ -1,11 +1,19 @@
 {
   "name": "deskbells",
   "version": "0.0.1",
-  "description": "Transcribe notes to Deskbells",
+  "description": "Transpose Songs to Kid's Instruments",
   "main": "index.js",
   "scripts": {
+    "build": "webpack --config webpack.config.js",
     "test": "test"
   },
   "author": "Steve Steele",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.14.6",
+    "@babel/preset-env": "^7.14.7",
+    "babel-loader": "^8.2.2",
+    "webpack": "^5.45.1",
+    "webpack-cli": "^4.7.2"
+  }
 }
