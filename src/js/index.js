@@ -92,15 +92,6 @@ const transpose = (song, instrument) => {
     return false;
 };
 
-const refreshSong = (songs, instruments, state) => {
-    const instrument = getInstrument(instruments, state.instrumentId);
-    const song = getSong(songs, state.songId);
-    const transposedSong = shift(song, state.transposition);
-    const uniqueNotes = setUniqueNotes(getUniqueNotes(transposedSong));
-    renderNotesList(instrument, uniqueNotes);
-    renderSong(transposedSong, instrument, state);
-};
-
 const loadSong = (songs, instruments, state) => {
     const instrument = getInstrument(instruments, state.instrumentId);
     const song = getSong(songs, state.songId);
@@ -108,14 +99,20 @@ const loadSong = (songs, instruments, state) => {
     if (false === alignment) {
         const lineEl = renderLine(songEl);
         renderLyric(lineEl, 'No valid transpositions for selected instrument');
-        return;
+        return false;
     }
-    const transposedSong = shift(song, alignment);
-    const uniqueNotes = setUniqueNotes(getUniqueNotes(transposedSong));
-    renderNotesList(instrument, uniqueNotes);
-    renderTranspositionSelect(state.transpositions);
-    renderSong(transposedSong, instrument, state);
+    return {
+        song: shift(song, alignment),
+        instrument,
+    };
 };
+
+const update = (songs, instruments, state) => {
+    const {song, instrument } = loadSong(songs, instruments, state);
+    const uniqueNotes = setUniqueNotes(getUniqueNotes(song));
+    renderNotesList(instrument, uniqueNotes);
+    renderSong(song, instrument, state);
+}
 
 // notes list
 const renderNotesList = (instrument, uniqueNotes) => {
@@ -182,30 +179,32 @@ const renderSongOptions = (songs) => {
 // handle lyric toggle
 lyricToggleEl.addEventListener('change', (e) => {
     setDoRenderLyrics(e.target.checked);
-    refreshSong(songs, instruments, state);
+    update(songs, instruments, state);
 });
 
 // handle instrument select
 instrumentSelectEl.addEventListener('change', (e) => {
     setInstrumentId(e.target.value);
-    refreshSong(songs, instruments, state);
+    update(songs, instruments, state);
 });
 
 // handle transposition select
 transpositionSelectEl.addEventListener('change', (e) => {
     setTransposition(e.target.value);
-    refreshSong(songs, instruments, state);
+    update(songs, instruments, state);
 });
 
 // handle song select
 songSelectEl.addEventListener('change', (e) => {
     setSongId(e.target.value);
     setTransposition(null);
-    loadSong(songs, instruments, state);
+    update(songs, instruments, state);
+    renderTranspositionSelect(state.transpositions);
 });
 
 // initialize
 renderLyricToggle();
 renderInstrumentSelect(instruments);
 renderSongOptions(songs)
-loadSong(songs, instruments, state);
+update(songs, instruments, state);
+renderTranspositionSelect(state.transpositions);
