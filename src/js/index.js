@@ -1,9 +1,12 @@
 import {
+    instruments,
+    songs,
+} from './constants/index.js';
+import {
     createLineElement,
     createNoteElement,
     createLyricElement,
 } from './elements.js';
-import { instruments } from './instruments.js';
 import {
     getAlignedTranspositions,
     getInstrument,
@@ -12,7 +15,6 @@ import {
     mapInstrumentNotes,
     shift,
 } from './music.js';
-import { songs } from './songs.js';
 import {
     setDoRenderLyrics,
     setInstrumentId,
