@@ -83,7 +83,7 @@ const renderSong = (song, instrument, { doRenderLyrics }) => {
 };
 
 const transpose = (song, instrument) => {
-    const uniqueNotes = setUniqueNotes(getUniqueNotes(song));
+    const uniqueNotes = getUniqueNotes(song);
     const instrumentNotes = mapInstrumentNotes(instrument);
     const alignments = setTranspositions(getAlignedTranspositions(uniqueNotes, instrumentNotes));
     if (alignments.length) {
