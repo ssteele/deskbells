@@ -50,6 +50,28 @@ select {
 .note {
     border-radius: 50%;
     height: 100px;
+    position: relative;
+}
+
+.chord {
+    left: 0;
+    position: absolute;
+}
+
+.chord:first-child {
+    top: 2.5rem;
+}
+
+.chord:nth-child(2) {
+    top: 5rem;
+}
+
+.v-space-1 {
+    margin-bottom: 2.5rem;
+}
+
+.v-space-2 {
+    margin-bottom: 5rem;
 }
 
 .unique-note {

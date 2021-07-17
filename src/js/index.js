@@ -3,9 +3,10 @@ import {
     songs,
 } from './constants/index.js';
 import {
+    createChordElement,
     createLineElement,
-    createNoteElement,
     createLyricElement,
+    createNoteElement,
 } from './elements.js';
 import {
     getAlignedTranspositions,
@@ -44,10 +45,20 @@ const getCurrentEl = (lineEl) => {
     return currentEl;
 };
 
-const renderNote = (lineEl, notesMap, index = 1) => {
+const renderChord = (lineEl, notesMap, chord = []) => {
+    const notes = chord.map((noteIndex) => {
+        return notesMap.find((n) => {
+            return n.index === noteIndex;
+        }).note;
+    });
+    lineEl.append(createChordElement(notes));
+    return getCurrentEl(lineEl);
+};
+
+const renderNote = (lineEl, notesMap, noteIndex = 1) => {
     const note = notesMap.find((n) => {
-        return n.index === index;
-    })
+        return n.index === noteIndex;
+    }).note;
     lineEl.append(createNoteElement(note));
     return getCurrentEl(lineEl);
 };
@@ -70,7 +81,11 @@ const renderSong = (song, instrument, { doRenderLyrics }) => {
         let lineEl;
         lineEl = renderLine(songEl);
         for (const note of notes) {
-            renderNote(lineEl, notesMap, note);
+            if (Array.isArray(note)) {
+                renderChord(lineEl, notesMap, note);
+            } else {
+                renderNote(lineEl, notesMap, note);
+            }
         }
 
         if (doRenderLyrics) {
