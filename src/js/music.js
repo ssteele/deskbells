@@ -16,7 +16,16 @@ export const getUniqueNotes = (song) => {
     const { lines } = song;
     let allNotes = [];
     lines.map((line) => {
-        allNotes = [ ...line.notes, ...allNotes ];
+        const { notes } = line;
+        const allNestedNotes = notes.map((n) => {
+            let output = n;
+            if (Array.isArray(n)) {
+                // @todo: handle array
+                output = n[0];
+            }
+            return output;
+        })
+        allNotes = [ ...allNestedNotes, ...allNotes ];
     });
     return [...new Set(allNotes)].sort((a, b) => a - b);
 };
@@ -41,6 +50,14 @@ export const getAlignedTranspositions = (uniqueNotes, instrumentNotes) => {
     return alignments;
 };
 
+const calculateShift = (note, shiftValue) => {
+    if (0 === note) {
+        return 0;
+    }
+    const shifted = note + shiftValue;
+    return (shifted < (notesInOctaveCount + 1)) ? shifted : shifted - notesInOctaveCount;
+}
+
 export const shift = (song, shiftValue) => {
     return {
         ...song, 
@@ -48,12 +65,15 @@ export const shift = (song, shiftValue) => {
             ...song.lines.map((line) => {
                 return {
                     ...line,
-                    notes: line.notes.map((e) => {
-                        if (0 === e) {
-                            return 0;
+                    notes: line.notes.map((note) => {
+                        if (Array.isArray(note)) {
+                            // @todo: handle array
+                            // return note.map((n) => {
+                            //     return calculateShift(n, shiftValue);
+                            // });
+                            return calculateShift(note[0], shiftValue);
                         }
-                        const shifted = e + shiftValue;
-                        return (shifted < (notesInOctaveCount + 1)) ? shifted : shifted - notesInOctaveCount;
+                        return calculateShift(note, shiftValue);
                     }),
                 };
             }),
