@@ -51,6 +51,7 @@ select {
     border-radius: 50%;
     height: 100px;
     position: relative;
+    vertical-align: top;
 }
 
 .chord {
