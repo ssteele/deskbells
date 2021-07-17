@@ -4,7 +4,7 @@ export const state = {
     instrumentId: 'deskbells',
     songId: 'twinkle-twinkle',
     transposition: null,
-    transpositions: [0, 5],
+    transpositions: [],
     uniqueNotes: [],
 };
 
