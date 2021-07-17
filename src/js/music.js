@@ -17,15 +17,7 @@ export const getUniqueNotes = (song) => {
     let allNotes = [];
     lines.map((line) => {
         const { notes } = line;
-        const allNestedNotes = notes.map((n) => {
-            let output = n;
-            if (Array.isArray(n)) {
-                // @todo: handle array
-                output = n[0];
-            }
-            return output;
-        })
-        allNotes = [ ...allNestedNotes, ...allNotes ];
+        allNotes = [ ...notes.flat(), ...allNotes ];
     });
     return [...new Set(allNotes)].sort((a, b) => a - b);
 };
@@ -67,11 +59,9 @@ export const shift = (song, shiftValue) => {
                     ...line,
                     notes: line.notes.map((note) => {
                         if (Array.isArray(note)) {
-                            // @todo: handle array
-                            // return note.map((n) => {
-                            //     return calculateShift(n, shiftValue);
-                            // });
-                            return calculateShift(note[0], shiftValue);
+                            return note.map((n) => {
+                                return calculateShift(n, shiftValue);
+                            });
                         }
                         return calculateShift(note, shiftValue);
                     }),
