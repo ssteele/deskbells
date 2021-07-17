@@ -165,4 +165,14 @@ export const songs = [
             },
         ],
     },
+    {
+        id: 'yesterday-1',
+        name: 'Yesterday &#9733;',
+        lines: [
+            {
+                notes: [[1, 5], 13, 5, 10, 10, 8, 6],
+                lyrics: [],
+            },
+        ],
+    },
 ];

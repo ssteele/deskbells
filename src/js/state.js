@@ -2,7 +2,8 @@
 export const state = {
     doRenderLyrics: true,
     instrumentId: 'deskbells',
-    songId: 'twinkle-twinkle',
+    // songId: 'twinkle-twinkle',
+    songId: 'yesterday-1',
     transposition: null,
     transpositions: [],
     uniqueNotes: [],
