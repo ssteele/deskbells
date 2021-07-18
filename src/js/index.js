@@ -58,9 +58,9 @@ const renderChord = (lineEl, notesMap, chord = []) => {
 };
 
 const renderNote = (lineEl, notesMap, noteIndex = 1) => {
-    const note = notesMap.find((n) => {
+    const { note } = notesMap.find((n) => {
         return n.index === noteIndex;
-    }).note;
+    });
     lineEl.append(createNoteElement(note));
     return getCurrentEl(lineEl);
 };
