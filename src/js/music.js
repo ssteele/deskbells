@@ -17,19 +17,9 @@ export const getUniqueNotes = (song) => {
     let allNotes = [];
     lines.map((line) => {
         const { notes } = line;
-        // @todo: Array.flat() crashes ipad
-        // const foo = notes.flat(1);
+        // would use es6 version, but i need this to work on an old ipad
         // allNotes = [ ...notes.flat(), ...allNotes ];
         allNotes = [ ...Array.prototype.concat.apply([], notes), ...allNotes ];
-        // const allNestedNotes = notes.map((n) => {
-        //     let output = n;
-        //     if (Array.isArray(n)) {
-        //         // @todo: handle array
-        //         output = n[0];
-        //     }
-        //     return output;
-        // })
-        // allNotes = [ ...allNestedNotes, ...allNotes ];
     });
     return [...new Set(allNotes)].sort((a, b) => a - b);
 };
