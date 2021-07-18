@@ -46,11 +46,13 @@ const getCurrentEl = (lineEl) => {
 };
 
 const renderChord = (lineEl, notesMap, chord = []) => {
-    const notes = chord.map((noteIndex) => {
-        return notesMap.find((n) => {
-            return n.index === noteIndex;
-        }).note;
-    });
+    const notes = chord
+        .sort((a, b) => a - b)
+        .map((noteIndex) => {
+            return notesMap.find((n) => {
+                return n.index === noteIndex;
+            }).note;
+        });
     lineEl.append(createChordElement(notes));
     return getCurrentEl(lineEl);
 };
