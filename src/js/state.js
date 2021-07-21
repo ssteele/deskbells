@@ -2,8 +2,7 @@
 export const state = {
     doRenderLyrics: true,
     instrumentId: 'deskbells',
-    // songId: 'twinkle-twinkle',
-    songId: 'house-of-the-rising-sun',
+    songId: 'twinkle-twinkle',
     transposition: null,
     transpositions: [],
     uniqueNotes: [],
