@@ -103,7 +103,7 @@ const renderSong = (song = new Song(), instrument = new Instrument(), { doRender
     }
 };
 
-const transpose = (song = new Song(), instrument = new instrument()) => {
+const transpose = (song = new Song(), instrument = new Instrument()) => {
     const uniqueNotes = getUniqueNotes(song);
     const instrumentNotes = mapInstrumentNotes(instrument);
     const alignments = setTranspositions(getAlignedTranspositions(uniqueNotes, instrumentNotes));
@@ -116,7 +116,7 @@ const transpose = (song = new Song(), instrument = new instrument()) => {
 const loadSong = (songs, instruments, state) => {
     const instrument = getInstrument(instruments, state.instrumentId);
     const song = getSong(songs, state.songId);
-    const alignment = state.transposition ?? !!setTransposition(transpose(song, instrument));
+    const alignment = state.transposition ?? setTransposition(transpose(song, instrument));
     if (false === alignment) {
         const lineEl = renderLine(songEl);
         renderLyric(lineEl, 'No valid transpositions for selected instrument');
