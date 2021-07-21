@@ -7,13 +7,13 @@ const notesInOctaveCount = 12;
 export const getInstrument = (instruments = [], instrumentId) => {
     return instruments.find((i) => {
         return i.id === instrumentId;
-    });
+    }) || new Instrument();
 };
 
 export const getSong = (songs = [], songId) => {
     return songs.find((s) => {
         return s.id === songId;
-    });
+    }) || new Song();
 };
 
 export const getUniqueNotes = (song = new Song()) => {
