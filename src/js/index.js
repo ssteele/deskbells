@@ -116,12 +116,11 @@ const transpose = (song = new Song(), instrument = new Instrument()) => {
 const loadSong = (songs, instruments, state) => {
     const instrument = getInstrument(instruments, state.instrumentId);
     const song = getSong(songs, state.songId);
-    const alignment = state.transposition ?? setTransposition(transpose(song, instrument));
+    const alignment = state.transposition ?? transpose(song, instrument);
     if (false === alignment) {
-        const lineEl = renderLine(songEl);
-        renderLyric(lineEl, 'No valid transpositions for selected instrument');
-        return false;
+        return {};
     }
+    setTransposition(alignment);
     return {
         song: shift(song, alignment),
         instrument,
@@ -129,7 +128,7 @@ const loadSong = (songs, instruments, state) => {
 };
 
 const update = (songs, instruments, state) => {
-    const {song, instrument } = loadSong(songs, instruments, state);
+    const {song = new Song(), instrument = new Instrument() } = loadSong(songs, instruments, state);
     const uniqueNotes = setUniqueNotes(getUniqueNotes(song));
     renderNotesList(instrument, uniqueNotes);
     renderSong(song, instrument, state);

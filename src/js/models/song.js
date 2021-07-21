@@ -4,7 +4,7 @@ export class Song {
     lines = [
         {
             notes: [],
-            lyrics: [],
+            lyrics: ['No valid transpositions for selected instrument'],
         },
     ];
 
