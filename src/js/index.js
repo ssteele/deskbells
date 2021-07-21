@@ -9,6 +9,10 @@ import {
     createNoteElement,
 } from './elements.js';
 import {
+    Instrument,
+    Song,
+} from './models/index.js';
+import {
     getAlignedTranspositions,
     getInstrument,
     getSong,
@@ -49,9 +53,9 @@ const renderChord = (lineEl, notesMap, chord = []) => {
     const notes = chord
         .sort((a, b) => a - b)
         .map((noteIndex) => {
-            return notesMap.find((n) => {
+            return (notesMap.find((n) => {
                 return n.index === noteIndex;
-            }).note;
+            }) || {}).note;
         });
     lineEl.append(createChordElement(notes));
     return getCurrentEl(lineEl);
@@ -75,7 +79,7 @@ const renderLine = (songEl) => {
     return getCurrentEl(songEl);
 };
 
-const renderSong = (song, instrument, { doRenderLyrics }) => {
+const renderSong = (song = new Song(), instrument = new Instrument(), { doRenderLyrics = true }) => {
     const { lines } = song;
     const { id: instrumentId, notesMap } = instrument;
     resetSongEl(instrumentId);
@@ -99,7 +103,7 @@ const renderSong = (song, instrument, { doRenderLyrics }) => {
     }
 };
 
-const transpose = (song, instrument) => {
+const transpose = (song = new Song(), instrument = new instrument()) => {
     const uniqueNotes = getUniqueNotes(song);
     const instrumentNotes = mapInstrumentNotes(instrument);
     const alignments = setTranspositions(getAlignedTranspositions(uniqueNotes, instrumentNotes));
@@ -112,7 +116,7 @@ const transpose = (song, instrument) => {
 const loadSong = (songs, instruments, state) => {
     const instrument = getInstrument(instruments, state.instrumentId);
     const song = getSong(songs, state.songId);
-    const alignment = state.transposition ?? setTransposition(transpose(song, instrument));
+    const alignment = state.transposition ?? !!setTransposition(transpose(song, instrument));
     if (false === alignment) {
         const lineEl = renderLine(songEl);
         renderLyric(lineEl, 'No valid transpositions for selected instrument');
@@ -132,13 +136,15 @@ const update = (songs, instruments, state) => {
 }
 
 // notes list
-const renderNotesList = (instrument, uniqueNotes) => {
+const renderNotesList = (instrument = new Instrument(), uniqueNotes = []) => {
     const { notesMap } = instrument;
     const notesList = uniqueNotes.map((n) => {
-        const { note } = notesMap.find((nm) => {
+        const { note = false } = notesMap.find((nm) => {
             return nm.index === n;
-        });
-        return `<div class="unique-note ${note}"></div>`;
+        }) || {};
+        if (note) {
+            return `<div class="unique-note ${note}"></div>`;
+        }
     });
     notesListEl.innerHTML = `
         <div class="line ${instrument.id}">

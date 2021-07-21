@@ -1,3 +1,7 @@
+import {
+    Instrument,
+    Song,
+} from './models/index.js';
 const notesInOctaveCount = 12;
 
 export const getInstrument = (instruments = [], instrumentId) => {
@@ -12,7 +16,7 @@ export const getSong = (songs = [], songId) => {
     });
 };
 
-export const getUniqueNotes = (song) => {
+export const getUniqueNotes = (song = new Song()) => {
     const { lines } = song;
     let allNotes = [];
     lines.map((line) => {
@@ -24,7 +28,7 @@ export const getUniqueNotes = (song) => {
     return [...new Set(allNotes)].sort((a, b) => a - b);
 };
 
-export const mapInstrumentNotes = (instrument) => {
+export const mapInstrumentNotes = (instrument = new Instrument()) => {
     const { notesMap } = instrument;
     return notesMap.map((nm) => {
         return nm.index;
@@ -52,7 +56,7 @@ const calculateShift = (note, shiftValue) => {
     return (shifted < (notesInOctaveCount + 1)) ? shifted : shifted - notesInOctaveCount;
 }
 
-export const shift = (song, shiftValue) => {
+export const shift = (song = new Song(), shiftValue = 0) => {
     return {
         ...song, 
         lines: [

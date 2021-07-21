@@ -203,41 +203,51 @@ export const songs = [
             },
         ],
     },
+    // {
+    //     id: 'yesterday-2',
+    //     name: 'Yesterday &#9733; &#9733;',
+    //     lines: [
+    //         {
+    //             notes: [[1, 5, 8], [12, 3, 10], [5, 3, 12], [10, 1, 5, 12], [10, 1, 5, 12], 8, [6, 1, 10]],
+    //             lyrics: ['Yesterday', 'all my', 'trouble seemed', 'so far', 'away', '', 'now it'],
+    //         },
+    //         {
+    //             notes: [[8, 6, 12], [1, 5, 8], [1, 5, 8], [12, 3], [10, 1, 12], [3, 1], [6, 1, 10], [1, 5, 8]],
+    //             lyrics: ['looks as though they\'re', 'here to', 'stay', '', 'oh I believe', 'in', 'yes-', '-terday'],
+    //         },
+    //         {
+    //             notes: [[1, 5, 8], [12, 3, 10], [5, 3, 12], [10, 1, 5, 12], [10, 1, 5, 12], 8, [6, 1, 10]],
+    //             lyrics: ['Suddenly', 'I\'m not', 'half the man', 'I used to', 'be', '', 'there\'s a'],
+    //         },
+    //         {
+    //             notes: [[8, 6, 12], [1, 5, 8], [1, 5, 8], [12, 3], [10, 1, 12], [3, 1], [6, 1, 10], [1, 5, 8]],
+    //             lyrics: ['shadow hanging', 'over me', '', 'oh', 'yesterday', 'came', 'sud-', '-denly'],
+    //         },
+    //         {
+    //             notes: [[12, 3, 10], [5, 3, 12], [10, 1, 5, 12], [5, 3, 8, 12], [6, 1, 10], [3, 6, 10, 12], [8, 6, 12], [1, 5, 8]],
+    //             lyrics: ['Why', 'she', 'had', 'to', 'go I don\'t', 'know she', 'wouldn\'t', 'say'],
+    //         },
+    //         {
+    //             notes: [[12, 3, 10], [5, 3, 12], [10, 1, 5, 12], [5, 3, 8, 12], [6, 1, 10], [3, 6, 10, 12], [8, 6, 12], [1, 5, 8]],
+    //             lyrics: ['I', 'said', 'some-', '-thing', 'wrong now I', 'long for', 'yesterday', '-ay -ay -ay'],
+    //         },
+    //         {
+    //             notes: [[1, 5, 8], [12, 3, 10], [5, 3, 12], [10, 1, 5, 12], [10, 1, 5, 12], 8, [6, 1, 10]],
+    //             lyrics: ['Yesterday', 'love was', 'such an easy', 'game to', 'play', '', 'now I'],
+    //         },
+    //         {
+    //             notes: [[8, 6, 12], [1, 5, 8], [1, 5, 8], [12, 3], [10, 1, 12], [3, 1], [6, 1, 10], [1, 5, 8]],
+    //             lyrics: ['need a place to', 'hide away', '', 'oh', 'I belie-', '-ve in', 'yes-', '-terday'],
+    //         },
+    //     ],
+    // },
     {
-        id: 'yesterday-2',
-        name: 'Yesterday &#9733; &#9733;',
+        id: 'house-of-the-rising-sun',
+        name: 'House of the Rising Sun &#9733;',
         lines: [
             {
-                notes: [[1, 5, 8], [12, 3, 10], [5, 3, 12], [10, 1, 5, 12], [10, 1, 5, 12], 8, [6, 1, 10]],
-                lyrics: ['Yesterday', 'all my', 'trouble seemed', 'so far', 'away', '', 'now it'],
-            },
-            {
-                notes: [[8, 6, 12], [1, 5, 8], [1, 5, 8], [12, 3], [10, 1, 12], [3, 1], [6, 1, 10], [1, 5, 8]],
-                lyrics: ['looks as though they\'re', 'here to', 'stay', '', 'oh I believe', 'in', 'yes-', '-terday'],
-            },
-            {
-                notes: [[1, 5, 8], [12, 3, 10], [5, 3, 12], [10, 1, 5, 12], [10, 1, 5, 12], 8, [6, 1, 10]],
-                lyrics: ['Suddenly', 'I\'m not', 'half the man', 'I used to', 'be', '', 'there\'s a'],
-            },
-            {
-                notes: [[8, 6, 12], [1, 5, 8], [1, 5, 8], [12, 3], [10, 1, 12], [3, 1], [6, 1, 10], [1, 5, 8]],
-                lyrics: ['shadow hanging', 'over me', '', 'oh', 'yesterday', 'came', 'sud-', '-denly'],
-            },
-            {
-                notes: [[12, 3, 10], [5, 3, 12], [10, 1, 5, 12], [5, 3, 8, 12], [6, 1, 10], [3, 6, 10, 12], [8, 6, 12], [1, 5, 8]],
-                lyrics: ['Why', 'she', 'had', 'to', 'go I don\'t', 'know she', 'wouldn\'t', 'say'],
-            },
-            {
-                notes: [[12, 3, 10], [5, 3, 12], [10, 1, 5, 12], [5, 3, 8, 12], [6, 1, 10], [3, 6, 10, 12], [8, 6, 12], [1, 5, 8]],
-                lyrics: ['I', 'said', 'some-', '-thing', 'wrong now I', 'long for', 'yesterday', '-ay -ay -ay'],
-            },
-            {
-                notes: [[1, 5, 8], [12, 3, 10], [5, 3, 12], [10, 1, 5, 12], [10, 1, 5, 12], 8, [6, 1, 10]],
-                lyrics: ['Yesterday', 'love was', 'such an easy', 'game to', 'play', '', 'now I'],
-            },
-            {
-                notes: [[8, 6, 12], [1, 5, 8], [1, 5, 8], [12, 3], [10, 1, 12], [3, 1], [6, 1, 10], [1, 5, 8]],
-                lyrics: ['need a place to', 'hide away', '', 'oh', 'I belie-', '-ve in', 'yes-', '-terday'],
+                notes: [[10, 1, 5], [1, 5, 8], [3, 7, 10], [6, 10, 1]],
+                lyrics: [],
             },
         ],
     },
