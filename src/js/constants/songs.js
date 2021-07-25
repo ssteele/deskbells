@@ -163,14 +163,14 @@ export const songs = [
                 notes: [5, 3, 1, 3, 1],
                 lyrics: ['Todo', 'el', 'dia sin', 'descans-', '-ar']
             },
-            {
-                notes: [5, 5, 10, 5, 5, 10],
-                lyrics: ['Toc', 'toc', 'toc', 'Toc', 'toc', 'toc']
-            },
-            {
-                notes: [5, 5, 10, 5, 5, 10],
-                lyrics: ['Toc', 'toc', 'toc', 'Toc', 'toc', 'toc']
-            },
+            // {
+            //     notes: [5, 5, 10, 5, 5, 10],
+            //     lyrics: ['Toc', 'toc', 'toc', 'Toc', 'toc', 'toc']
+            // },
+            // {
+            //     notes: [5, 5, 10, 5, 5, 10],
+            //     lyrics: ['Toc', 'toc', 'toc', 'Toc', 'toc', 'toc']
+            // },
             {
                 notes: [1, 3, 5, 5, 1, 10, 12, 1],
                 lyrics: ['El pajaro', 'carpin-', '-tero', 'pi-', '-co-', '-tea', 'sin pa-', '-rar']
