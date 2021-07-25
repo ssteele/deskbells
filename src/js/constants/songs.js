@@ -128,6 +128,76 @@ export const songs = [
         ],
     },
     {
+        id: 'pajaro-carpintero',
+        name: 'El Pajaro Carpintero',
+        lines: [
+            {
+                notes: [8, 8, 1, 8, 8, 1],
+                lyrics: ['Toc', 'toc', 'toc', 'Toc', 'toc', 'toc']
+            },
+            {
+                notes: [8, 8, 1, 8, 8, 1],
+                lyrics: ['Toc', 'toc', 'toc', 'Toc', 'toc', 'toc']
+            },
+            {
+                notes: [5, 6, 8, 8, 5, 1, 3, 5],
+                lyrics: ['El pajaro', 'carpin-', '-tero', 'pi-', '-co-', '-tea', 'sin pa-', '-rar']
+            },
+            {
+                notes: [5, 6, 8, 8, 1, 3, 1],
+                lyrics: ['Construy-', '-endo', 'su', 'casita', 'trabaja sin', 'reclam-', '-ar']
+            },
+            {
+                notes: [8, 10, 8, 5, 6, 5],
+                lyrics: ['Toc toc', 'toc', 'toc', 'Toc toc', 'toc', 'toc']
+            },
+            {
+                notes: [5, 3, 1, 3, 5],
+                lyrics: ['Con', 'su', 'pico a', 'picote-', '-ar']
+            },
+            {
+                notes: [8, 10, 8, 5, 6, 5],
+                lyrics: ['Toc toc', 'toc', 'toc', 'Toc toc', 'toc', 'toc']
+            },
+            {
+                notes: [5, 3, 1, 3, 1],
+                lyrics: ['Todo', 'el', 'dia sin', 'descans-', '-ar']
+            },
+            {
+                notes: [5, 5, 10, 5, 5, 10],
+                lyrics: ['Toc', 'toc', 'toc', 'Toc', 'toc', 'toc']
+            },
+            {
+                notes: [5, 5, 10, 5, 5, 10],
+                lyrics: ['Toc', 'toc', 'toc', 'Toc', 'toc', 'toc']
+            },
+            {
+                notes: [1, 3, 5, 5, 1, 10, 12, 1],
+                lyrics: ['El pajaro', 'carpin-', '-tero', 'pi-', '-co-', '-tea', 'sin pa-', '-rar']
+            },
+            {
+                notes: [1, 3, 5, 5, 1, 10, 12, 10],
+                lyrics: ['Construy-', '-endo', 'su', 'casita', 'trabaja sin', 'reclam-', '-ar']
+            },
+            {
+                notes: [5, 6, 5, 1, 3, 1],
+                lyrics: ['Toc toc', 'toc', 'toc', 'Toc toc', 'toc', 'toc']
+            },
+            {
+                notes: [1, 12, 10, 10, 12, 12, 1],
+                lyrics: ['Con', 'su', 'pi-', '-co a', 'picote-', '-ar']
+            },
+            {
+                notes: [5, 6, 5, 1, 3, 1],
+                lyrics: ['Toc toc', 'toc', 'toc', 'Toc toc', 'toc', 'toc']
+            },
+            {
+                notes: [1, 12, 10, 10, 12, 12, 10],
+                lyrics: ['Todo', 'el', 'dia', 'sin', 'descans-', '-ar']
+            }
+        ]
+    },
+    {
         id: 'yesterday',
         name: 'Yesterday',
         lines: [
