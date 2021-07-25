@@ -121,8 +121,10 @@ const loadSong = (songs, instruments, state) => {
         return {};
     }
     setTransposition(alignment);
+    const shiftedSong = shift(song, alignment);
+    // console.log('shiftedSong:', shiftedSong);
     return {
-        song: shift(song, alignment),
+        song: shiftedSong,
         instrument,
     };
 };
