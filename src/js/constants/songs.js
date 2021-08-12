@@ -98,6 +98,40 @@ export const songs = [
         ],
     },
     {
+        id: 'you-are-my-sunshine',
+        name: 'You Are My Sunshine',
+        lines: [
+            {
+                notes: [8, 1, 3, 5, 5],
+                lyrics: [],
+            },
+            {
+                notes: [5, 3, 5, 1, 1],
+                lyrics: [],
+            },
+            {
+                notes: [1, 3, 5, 6, 10],
+                lyrics: [],
+            },
+            {
+                notes: [10, 8, 6, 5],
+                lyrics: [],
+            },
+            {
+                notes: [8, 10, 12, 1, 5],
+                lyrics: [],
+            },
+            {
+                notes: [10, 8, 6, 5, 1],
+                lyrics: [],
+            },
+            {
+                notes: [1, 3, 5, 6, 3, 3, 5, 1],
+                lyrics: [],
+            },
+        ],
+    },
+    {
         id: 'aserrin-aserran',
         name: 'Aserrin Aserran',
         lines: [
