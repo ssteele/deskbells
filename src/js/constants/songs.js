@@ -118,7 +118,7 @@ export const songs = [
                 lyrics: [],
             },
             {
-                notes: [8, 10, 12, 1, 5],
+                notes: [1, 3, 5, 6, 10],
                 lyrics: [],
             },
             {
