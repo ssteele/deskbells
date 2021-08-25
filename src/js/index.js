@@ -3,9 +3,9 @@ import {
     songs,
 } from './constants/index.js';
 import {
-    createChordElement,
     createLineElement,
     createLyricElement,
+    createMultiNoteElement,
     createNoteElement,
 } from './elements.js';
 import {
@@ -38,6 +38,10 @@ const transpositionSelectEl = document.getElementById('transposition-select');
 const songSelectEl = document.getElementById('song-select');
 const songEl = document.getElementById('song');
 
+const zip = (a, b) => {
+    return a.map((x, i) => [x, b[i]]);
+};
+
 const resetSongEl = (instrumentId) => {
     songEl.innerHTML = '';
     songEl.classList = instrumentId;
@@ -49,23 +53,39 @@ const getCurrentEl = (lineEl) => {
     return currentEl;
 };
 
-const renderChord = (lineEl, notesMap, chord = []) => {
-    const notes = chord
+const transformChord = (notesMap = [], chord = []) => {
+    let mtdChord = (Array.isArray(chord)) ? chord : [ chord ];
+    const [chordIndex, ...symbols] = mtdChord;
+    if (chordIndex) {
+        const { note: root } = notesMap.find((n) => {
+            return n.index === chordIndex;
+        });
+        if (root) {
+            return [root.toUpperCase(), symbols].join('');
+        }
+    }
+    return '';
+};
+
+const renderNote = (lineEl, notesMap, noteIndex = 1, chord = []) => {
+    const { note } = notesMap.find((n) => {
+        return n.index === noteIndex;
+    });
+    const transformedChord = transformChord(notesMap, chord);
+    lineEl.append(createNoteElement(note, transformedChord));
+    return getCurrentEl(lineEl);
+};
+
+const renderNotes = (lineEl, notesMap, notes = [], chord = []) => {
+    const transformedNotes = notes
         .sort((a, b) => a - b)
         .map((noteIndex) => {
             return (notesMap.find((n) => {
                 return n.index === noteIndex;
             }) || {}).note;
         });
-    lineEl.append(createChordElement(notes));
-    return getCurrentEl(lineEl);
-};
-
-const renderNote = (lineEl, notesMap, noteIndex = 1) => {
-    const { note } = notesMap.find((n) => {
-        return n.index === noteIndex;
-    });
-    lineEl.append(createNoteElement(note));
+    const transformedChord = transformChord(notesMap, chord);
+    lineEl.append(createMultiNoteElement(transformedNotes, transformedChord));
     return getCurrentEl(lineEl);
 };
 
@@ -83,14 +103,14 @@ const renderSong = (song = new Song(), instrument = new Instrument(), { doRender
     const { lines } = song;
     const { id: instrumentId, notesMap } = instrument;
     resetSongEl(instrumentId);
-    for (const { notes, lyrics } of lines) {
+    for (const { notes, chords, lyrics } of lines) {
         let lineEl;
         lineEl = renderLine(songEl);
-        for (const note of notes) {
+        for (let [note, chord] of zip(notes, chords)) {
             if (Array.isArray(note)) {
-                renderChord(lineEl, notesMap, note);
+                renderNotes(lineEl, notesMap, note, chord);
             } else {
-                renderNote(lineEl, notesMap, note);
+                renderNote(lineEl, notesMap, note, chord);
             }
         }
 
@@ -130,7 +150,7 @@ const loadSong = (songs, instruments, state) => {
 };
 
 const update = (songs, instruments, state) => {
-    const {song = new Song(), instrument = new Instrument() } = loadSong(songs, instruments, state);
+    const { song = new Song(), instrument = new Instrument() } = loadSong(songs, instruments, state);
     const uniqueNotes = setUniqueNotes(getUniqueNotes(song));
     renderNotesList(instrument, uniqueNotes);
     renderSong(song, instrument, state);

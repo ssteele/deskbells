@@ -5,7 +5,7 @@ export const instruments = [
         notesMap: [
             {
                 index: 0,
-                note: 'rest',
+                note: '',
             },
             {
                 index: 1,

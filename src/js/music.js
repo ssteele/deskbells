@@ -71,6 +71,13 @@ export const shift = (song = new Song(), shiftValue = 0) => {
                         }
                         return calculateShift(note, shiftValue);
                     }),
+                    chords: line.chords.map((chord) => {
+                        if (Array.isArray(chord)) {
+                            const [root, ...symbols] = chord;
+                            return [calculateShift(root, shiftValue), ...symbols];
+                        }
+                        return calculateShift(chord, shiftValue);
+                    }),
                 };
             }),
         ],

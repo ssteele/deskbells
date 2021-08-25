@@ -4,15 +4,22 @@ export const createLineElement = () => {
     return el;
 };
 
-export const createNoteElement = (note) => {
+const createChordText = (chord) => {
+    return document.createTextNode(chord);
+};
+
+export const createNoteElement = (note, chord) => {
     const el = document.createElement('div');
     el.classList.add('note', note);
+    if (chord) {
+        el.appendChild(createChordText(chord));
+    }
     return el;
 };
 
-export const createChordElement = (notes = []) => {
+export const createMultiNoteElement = (notes = [], chord = '') => {
     if (!Array.isArray(notes)) {
-        createNoteElement(notes);
+        return createNoteElement(notes, chord);
     }
     const el = document.createElement('div');
     el.classList.add('note', `v-space-${notes.length - 1}`, notes[0]);
@@ -20,6 +27,9 @@ export const createChordElement = (notes = []) => {
         const childEl = document.createElement('div');
         childEl.classList.add('note', 'chord', notes[i]);
         el.appendChild(childEl);
+    }
+    if (chord) {
+        el.appendChild(createChordText(chord));
     }
     return el;
 };
