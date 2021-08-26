@@ -55,19 +55,32 @@ select {
 }
 
 .chord {
+    color: #fff;
+    display: inline-block;
+    margin-top: 2.25rem;
+    position: relative;
+    text-shadow:
+        -1px -1px 0 #333,  
+        1px -1px 0 #333,
+        -1px 1px 0 #333,
+        1px 1px 0 #333;
+    z-index: 10;
+}
+
+.multinote {
     left: 0;
     position: absolute;
 }
 
-.chord:first-child {
+.multinote:first-child {
     top: 2.5rem;
 }
 
-.chord:nth-child(2) {
+.multinote:nth-child(2) {
     top: 5rem;
 }
 
-.chord:nth-child(3) {
+.multinote:nth-child(3) {
     top: 7.5rem;
 }
 
@@ -75,8 +88,16 @@ select {
     margin-bottom: 2.5rem;
 }
 
+.v-space-1 .chord {
+    margin-top: 5rem;
+}
+
 .v-space-2 {
     margin-bottom: 5rem;
+}
+
+.v-space-2 .chord {
+    margin-top: 7.5rem;
 }
 
 .v-space-3 {
