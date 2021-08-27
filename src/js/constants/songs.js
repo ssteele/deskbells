@@ -5,32 +5,32 @@ export const songs = [
         lines: [
             {
                 notes: [1, 1, 8, 8, 10, 10, 8],
-                chords: [1, 1, 8, 8, 10, 10, 8],
+                chords: [1, 0, 0, 0, 6, 0, 1],
                 lyrics: ['Twin-', '-kle', 'twin-', '-kle', 'lit-', '-tle', 'star'],
             },
             {
                 notes: [6, 6, 5, 5, 3, 3, 1],
-                chords: [],
+                chords: [6, 0, 1, 0, [8, '7'], 0, 1],
                 lyrics: ['How', 'I', 'won-', '-der', 'what', 'you', 'are'],
             },
             {
                 notes: [8, 8, 6, 6, 5, 5, 3],
-                chords: [],
+                chords: [1, 6, 0, 0, 1, 0, [8, '7']],
                 lyrics: ['Up', 'abo-', '-ve', 'the', 'world', 'so', 'high'],
             },
             {
                 notes: [8, 8, 6, 6, 5, 5, 3],
-                chords: [],
+                chords: [1, 6, 0, 0, 1, 0, [8, '7']],
                 lyrics: ['Like', 'a', 'dia-', '-mond', 'in', 'the', 'sky'],
             },
             {
                 notes: [1, 1, 8, 8, 10, 10, 8],
-                chords: [],
+                chords: [1, 0, 0, 0, 6, 0, 1],
                 lyrics: ['Twin-', '-kle', 'twin-', '-kle', 'lit-', '-tle', 'star'],
             },
             {
                 notes: [6, 6, 5, 5, 3, 3, 1],
-                chords: [],
+                chords: [6, 0, 1, 0, [8, '7'], 0, 1],
                 lyrics: ['How', 'I', 'won-', '-der', 'what', 'you', 'are'],
             },
         ],
