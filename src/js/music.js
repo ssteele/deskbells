@@ -16,8 +16,7 @@ export const getSong = (songs = [], songId) => {
     }) || new Song();
 };
 
-export const getUniqueNotes = (song = new Song()) => {
-    const { lines } = song;
+export const getUniqueNotes = (lines = [ new Line() ]) => {
     let allNotes = [];
     lines.map((line) => {
         const { notes } = line;
@@ -56,30 +55,25 @@ const calculateShift = (note, shiftValue) => {
     return (shifted < (notesInOctaveCount + 1)) ? shifted : shifted - notesInOctaveCount;
 }
 
-export const shift = (song = new Song(), shiftValue = 0) => {
-    return {
-        ...song, 
-        lines: [
-            ...song.lines.map((line) => {
-                return {
-                    ...line,
-                    notes: line.notes.map((note) => {
-                        if (Array.isArray(note)) {
-                            return note.map((n) => {
-                                return calculateShift(n, shiftValue);
-                            });
-                        }
-                        return calculateShift(note, shiftValue);
-                    }),
-                    chords: line.chords.map((chord) => {
-                        if (Array.isArray(chord)) {
-                            const [root, ...symbols] = chord;
-                            return [calculateShift(root, shiftValue), ...symbols];
-                        }
-                        return calculateShift(chord, shiftValue);
-                    }),
-                };
+export const shift = (lines = [ new Line() ], shiftValue = 0) => {
+    return lines.map((line) => {
+        return {
+            ...line,
+            notes: line.notes.map((note) => {
+                if (Array.isArray(note)) {
+                    return note.map((n) => {
+                        return calculateShift(n, shiftValue);
+                    });
+                }
+                return calculateShift(note, shiftValue);
             }),
-        ],
-    };
+            chords: line.chords.map((chord) => {
+                if (Array.isArray(chord)) {
+                    const [root, ...symbols] = chord;
+                    return [calculateShift(root, shiftValue), ...symbols];
+                }
+                return calculateShift(chord, shiftValue);
+            }),
+        };
+    });
 };

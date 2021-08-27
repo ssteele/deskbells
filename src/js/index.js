@@ -102,11 +102,13 @@ const renderLine = (songEl) => {
 };
 
 const renderSong = (
-    song = new Song(),
+    lines = [ new Line() ],
     instrument = new Instrument(),
-    { doRenderChords = true, doRenderLyrics = true }
+    {
+        doRenderChords = true,
+        doRenderLyrics = true,
+    }
 ) => {
-    const { lines } = song;
     const { id: instrumentId, notesMap } = instrument;
     resetSongEl(instrumentId);
     for (const { notes, chords, lyrics } of lines) {
@@ -132,8 +134,8 @@ const renderSong = (
     }
 };
 
-const transpose = (song = new Song(), instrument = new Instrument()) => {
-    const uniqueNotes = getUniqueNotes(song);
+const transpose = (lines = [ new Line() ], instrument = new Instrument()) => {
+    const uniqueNotes = getUniqueNotes(lines);
     const instrumentNotes = mapInstrumentNotes(instrument);
     const alignments = setTranspositions(getAlignedTranspositions(uniqueNotes, instrumentNotes));
     if (alignments.length) {
@@ -145,24 +147,27 @@ const transpose = (song = new Song(), instrument = new Instrument()) => {
 const loadSong = (songs, instruments, state) => {
     const instrument = getInstrument(instruments, state.instrumentId);
     const song = getSong(songs, state.songId);
-    const alignment = state.transposition ?? transpose(song, instrument);
+    const { levels } = song;
+    const { level } = state;
+    const { lines } = levels.find((s) => s.level === level);
+    const alignment = state.transposition ?? transpose(lines, instrument);
     if (false === alignment) {
         return {};
     }
     setTransposition(alignment);
-    const shiftedSong = shift(song, alignment);
-    // console.log('shiftedSong:', shiftedSong);
+    const shiftedLines = shift(lines, alignment);
+    // console.log('shiftedLines:', shiftedLines);
     return {
-        song: shiftedSong,
+        lines: shiftedLines,
         instrument,
     };
 };
 
 const update = (songs, instruments, state) => {
-    const { song = new Song(), instrument = new Instrument() } = loadSong(songs, instruments, state);
-    const uniqueNotes = setUniqueNotes(getUniqueNotes(song));
+    const { lines = [ new Line() ], instrument = new Instrument() } = loadSong(songs, instruments, state);
+    const uniqueNotes = setUniqueNotes(getUniqueNotes(lines));
     renderNotesList(instrument, uniqueNotes);
-    renderSong(song, instrument, state);
+    renderSong(lines, instrument, state);
 }
 
 // notes list

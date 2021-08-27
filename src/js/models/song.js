@@ -1,10 +1,14 @@
+import { Line } from './line.js';
+
 export class Song {
     id = '';
     name = '';
-    lines = [
+    levels = [
         {
-            notes: [],
-            lyrics: ['No valid transpositions for selected instrument'],
+            level: 1,
+            lines: [
+                new Line(),
+            ],
         },
     ];
 
