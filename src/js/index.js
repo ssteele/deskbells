@@ -21,6 +21,7 @@ import {
     shift,
 } from './music.js';
 import {
+    setDoRenderChords,
     setDoRenderLyrics,
     setInstrumentId,
     setSongId,
@@ -32,6 +33,7 @@ import {
 
 // dom elements registry
 const notesListEl = document.getElementById('notes-list');
+const chordToggleEl = document.getElementById('chord-toggle');
 const lyricToggleEl = document.getElementById('lyric-toggle');
 const instrumentSelectEl = document.getElementById('instrument-select');
 const transpositionSelectEl = document.getElementById('transposition-select');
@@ -99,11 +101,18 @@ const renderLine = (songEl) => {
     return getCurrentEl(songEl);
 };
 
-const renderSong = (song = new Song(), instrument = new Instrument(), { doRenderLyrics = true }) => {
+const renderSong = (
+    song = new Song(),
+    instrument = new Instrument(),
+    { doRenderChords = true, doRenderLyrics = true }
+) => {
     const { lines } = song;
     const { id: instrumentId, notesMap } = instrument;
     resetSongEl(instrumentId);
     for (const { notes, chords, lyrics } of lines) {
+        if (!doRenderChords) {
+            chords = [];
+        }
         let lineEl;
         lineEl = renderLine(songEl);
         for (let [note, chord] of zip(notes, chords)) {
@@ -174,6 +183,16 @@ const renderNotesList = (instrument = new Instrument(), uniqueNotes = []) => {
     `;
 };
 
+// chords toggle
+const renderChordToggle = () => {
+    chordToggleEl.innerHTML = `
+        <div>
+            <input type="checkbox" id="chords" name="chords" checked>
+            <label for="chords">Chords</label>
+        </div>
+    `;
+};
+
 // lyrics toggle
 const renderLyricToggle = () => {
     lyricToggleEl.innerHTML = `
@@ -220,6 +239,12 @@ const renderSongOptions = (songs) => {
     `;
 };
 
+// handle chord toggle
+chordToggleEl.addEventListener('change', (e) => {
+    setDoRenderChords(e.target.checked);
+    update(songs, instruments, state);
+});
+
 // handle lyric toggle
 lyricToggleEl.addEventListener('change', (e) => {
     setDoRenderLyrics(e.target.checked);
@@ -247,6 +272,7 @@ songSelectEl.addEventListener('change', (e) => {
 });
 
 // initialize
+renderChordToggle();
 renderLyricToggle();
 renderInstrumentSelect(instruments);
 renderSongOptions(songs)

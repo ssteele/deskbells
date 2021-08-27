@@ -1,11 +1,17 @@
 // mutable state
 export const state = {
+    doRenderChords: true,
     doRenderLyrics: true,
     instrumentId: 'deskbells',
     songId: 'twinkle-twinkle',
     transposition: null,
     transpositions: [],
     uniqueNotes: [],
+};
+
+export const setDoRenderChords = (doRenderChords = true) => {
+    state.doRenderChords = !!doRenderChords;
+    return state.doRenderChords;
 };
 
 export const setDoRenderLyrics = (doRenderLyrics = true) => {
