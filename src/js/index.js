@@ -112,12 +112,13 @@ const renderSong = (
     const { id: instrumentId, notesMap } = instrument;
     resetSongEl(instrumentId);
     for (const { notes, chords, lyrics } of lines) {
+        let mtdChords = chords;
         if (!doRenderChords) {
-            chords = [];
+            mtdChords = [];
         }
         let lineEl;
         lineEl = renderLine(songEl);
-        for (let [note, chord] of zip(notes, chords)) {
+        for (let [note, chord] of zip(notes, mtdChords)) {
             if (Array.isArray(note)) {
                 renderNotes(lineEl, notesMap, note, chord);
             } else {
