@@ -209,7 +209,9 @@ const renderInstrumentSelect = (instruments) => {
 // instrument select
 const renderVersionSelect = (versions) => {
     const versionOptions = versions.map((v) => {
-        return `<option value="${v.id}">Level ${'&#9733;'.repeat(v.level)}</option>`;
+        const name = v.name || 'Level';
+        let label = `${name} ${'&#9733;'.repeat(v.level)}`;
+        return `<option value="${v.id}">${label}</option>`;
     });
     versionSelectEl.innerHTML = `
         <select name="versions" id="versions">

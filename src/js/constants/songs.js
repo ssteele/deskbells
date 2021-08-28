@@ -4,8 +4,8 @@ export const songs = [
         name: 'Twinkle Twinkle',
         versions: [
             {
-                name: 'Basic',
-                id: 'basic',
+                name: '',
+                id: '1',
                 level: 1,
                 lines: [
                     {
