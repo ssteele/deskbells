@@ -10,7 +10,7 @@ export const songs = [
                 lines: [
                     {
                         notes: [1, 1, 8, 8, 10, 10, 8],
-                        chords: [1, 0, 0, 0, 6, 0, 1],
+                        chords: [1, 0, 1, 0, 6, 0, 1],
                         lyrics: ['Twin-', '-kle', 'twin-', '-kle', 'lit-', '-tle', 'star'],
                     },
                     {
@@ -20,17 +20,17 @@ export const songs = [
                     },
                     {
                         notes: [8, 8, 6, 6, 5, 5, 3],
-                        chords: [1, 6, 0, 0, 1, 0, [8, '7']],
+                        chords: [1, 0, 6, 0, 1, 0, [8, '7']],
                         lyrics: ['Up', 'abo-', '-ve', 'the', 'world', 'so', 'high'],
                     },
                     {
                         notes: [8, 8, 6, 6, 5, 5, 3],
-                        chords: [1, 6, 0, 0, 1, 0, [8, '7']],
+                        chords: [1, 0, 6, 0, 1, 0, [8, '7']],
                         lyrics: ['Like', 'a', 'dia-', '-mond', 'in', 'the', 'sky'],
                     },
                     {
                         notes: [1, 1, 8, 8, 10, 10, 8],
-                        chords: [1, 0, 0, 0, 6, 0, 1],
+                        chords: [1, 0, 1, 0, 6, 0, 1],
                         lyrics: ['Twin-', '-kle', 'twin-', '-kle', 'lit-', '-tle', 'star'],
                     },
                     {
@@ -149,38 +149,38 @@ export const songs = [
                 lines: [
                     {
                         notes: [8, 1, 3, 5, 5],
-                        chords: [],
-                        lyrics: [],
+                        chords: [8, 0, 0, 0, 0],
+                        lyrics: ['You', 'are', 'my', 'sun-', '-shine'],
                     },
                     {
                         notes: [5, 3, 5, 1, 1],
-                        chords: [],
-                        lyrics: [],
+                        chords: [0, 0, 0, 0, 0],
+                        lyrics: ['my', 'on-', '-ly', 'sun-', '-shine'],
                     },
                     {
                         notes: [1, 3, 5, 6, 10],
-                        chords: [],
-                        lyrics: [],
+                        chords: [0, 0, 0, 1, 0],
+                        lyrics: ['You', 'make', 'me', 'hap-', '-py'],
                     },
                     {
                         notes: [10, 8, 6, 5],
-                        chords: [],
-                        lyrics: [],
+                        chords: [0, 0, 0, 8],
+                        lyrics: ['when', 'skies', 'are', 'gray'],
                     },
                     {
                         notes: [1, 3, 5, 6, 10],
-                        chords: [],
-                        lyrics: [],
+                        chords: [0, 0, 0, 1, 0],
+                        lyrics: ['You\'ll', 'nev-', '-er', 'know', 'dear'],
                     },
                     {
                         notes: [10, 8, 6, 5, 1],
-                        chords: [],
-                        lyrics: [],
+                        chords: [0, 0, 0, 8, 0],
+                        lyrics: ['how', 'much', 'I', 'love', 'you'],
                     },
                     {
                         notes: [1, 3, 5, 6, 3, 3, 5, 1],
-                        chords: [],
-                        lyrics: [],
+                        chords: [0, 0, 0, 0, 3, 0, 8, 0],
+                        lyrics: ['Please', 'don\'t', 'take', 'my', 'sun-', '-shine', 'a-', '-way'],
                     },
                 ],
             },
