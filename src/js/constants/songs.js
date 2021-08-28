@@ -475,7 +475,7 @@ export const songs = [
         versions: [
             {
                 name: '',
-                id: 'two',
+                id: '2',
                 level: 2,
                 lines: [
                     {
@@ -502,31 +502,31 @@ export const songs = [
             },
             {
                 name: '',
-                id: 'three',
+                id: '3',
                 level: 3,
                 lines: [
                     {
                         // notes: [[10, 1, 5], [1, 5, 8], [3, 7, 10], [6, 10, 1]],
                         notes: [[10, 1, 5], [1, 5, 8], [3, 10], [6, 10, 1]],
-                        chords: [],
+                        chords: [[10, 'm'], 1, 3, 6],
                         lyrics: ['There is a', 'house in', 'New Orle-', '-ans'],
                     },
                     {
                         // notes: [[10, 1, 5], [1, 5, 8], [5, 9, 12]],
                         notes: [[10, 1, 5], [1, 5, 8], [5, 12]],
-                        chords: [],
+                        chords: [[10, 'm'], 1, 5],
                         lyrics: ['they call the', 'Rising', 'Sun'],
                     },
                     {
                         // notes: [[10, 1, 5], [1, 5, 8], [3, 7, 10], [6, 10, 1]],
                         notes: [[10, 1, 5], [1, 5, 8], [3, 10], [6, 10, 1]],
-                        chords: [],
+                        chords: [[10, 'm'], 1, 3, 6],
                         lyrics: ['and it\'s been the', 'ruin of', 'many a poor', 'boy'],
                     },
                     {
                         // notes: [[10, 1, 5], [5, 9, 12], [10, 1, 5]],
                         notes: [[10, 1, 5], [5, 12], [10, 1, 5]],
-                        chords: [],
+                        chords: [[10, 'm'], 5, [10, 'm']],
                         lyrics: ['and God, I', 'know I\'m', 'one'],
                     },
                 ],
