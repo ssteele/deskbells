@@ -67,7 +67,7 @@ const transformChord = (notesMap = [], chord = []) => {
             return n.index === chordIndex;
         });
         if (root) {
-            return [root.toUpperCase(), symbols].join('');
+            return [root.toUpperCase(), ...symbols].join('');
         }
     }
     return '';
