@@ -2,8 +2,9 @@ export const songs = [
     {
         id: 'twinkle-twinkle',
         name: 'Twinkle Twinkle',
-        levels: [
+        versions: [
             {
+                id: '',
                 level: 1,
                 lines: [
                     {

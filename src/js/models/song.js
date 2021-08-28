@@ -1,15 +1,10 @@
-import { Line } from './line.js';
+import { Version } from './version.js';
 
 export class Song {
     id = '';
     name = '';
-    levels = [
-        {
-            level: 1,
-            lines: [
-                new Line(),
-            ],
-        },
+    versions = [
+        new Version(),
     ];
 
     constructor(obj) {

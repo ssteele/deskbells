@@ -148,9 +148,9 @@ const transpose = (lines = [ new Line() ], instrument = new Instrument()) => {
 const loadSong = (songs, instruments, state) => {
     const instrument = getInstrument(instruments, state.instrumentId);
     const song = getSong(songs, state.songId);
-    const { levels } = song;
+    const { versions } = song;
     const { level } = state;
-    const { lines } = levels.find((s) => s.level === level);
+    const { lines } = versions.find((s) => s.level === level) || versions[0];
     const alignment = state.transposition ?? transpose(lines, instrument);
     if (false === alignment) {
         return {};
