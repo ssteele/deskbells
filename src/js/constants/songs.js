@@ -40,391 +40,435 @@ export const songs = [
                     },
                 ],
             },
-        ]
+        ],
     },
-    // {
-    //     id: 'lightly-row',
-    //     name: 'Lightly Row',
-    //     lines: [
-    //         {
-    //             notes: [8, 5, 5, 6, 3, 3],
-    //             chords: [],
-    //             lyrics: [],
-    //         },
-    //         {
-    //             notes: [1, 3, 5, 6, 8, 8, 8],
-    //             chords: [],
-    //             lyrics: [],
-    //         },
-    //         {
-    //             notes: [8, 5, 5, 6, 3, 3],
-    //             chords: [],
-    //             lyrics: [],
-    //         },
-    //         {
-    //             notes: [1, 5, 8, 8, 1, 1, 1],
-    //             chords: [],
-    //             lyrics: [],
-    //         },
-    //         {
-    //             notes: [3, 3, 3, 3, 3, 5, 6],
-    //             chords: [],
-    //             lyrics: [],
-    //         },
-    //         {
-    //             notes: [5, 5, 5, 5, 5, 6, 8],
-    //             chords: [],
-    //             lyrics: [],
-    //         },
-    //         {
-    //             notes: [8, 5, 5, 6, 3, 3],
-    //             chords: [],
-    //             lyrics: [],
-    //         },
-    //         {
-    //             notes: [1, 5, 8, 8, 1, 1, 1],
-    //             chords: [],
-    //             lyrics: [],
-    //         },
-    //     ],
-    // },
-    // {
-    //     id: 'song-of-the-wind',
-    //     name: 'Song of the Wind',
-    //     lines: [
-    //         {
-    //             notes: [1, 3, 5, 6, 8, 8, 8, 8, 8],
-    //             chords: [],
-    //             lyrics: [],
-    //         },
-    //         {
-    //             notes: [10, 6, 1, 10, 8],
-    //             chords: [],
-    //             lyrics: [],
-    //         },
-    //         {
-    //             notes: [10, 6, 1, 10, 8, 8],
-    //             chords: [],
-    //             lyrics: [],
-    //         },
-    //         {
-    //             notes: [6, 6, 6, 6, 5, 5, 5, 5, 3, 3, 3],
-    //             chords: [],
-    //             lyrics: [],
-    //         },
-    //         {
-    //             notes: [1, 5, 8, 8, 6, 6, 6, 6, 5],
-    //             chords: [],
-    //             lyrics: [],
-    //         },
-    //         {
-    //             notes: [5, 5, 5, 3, 3, 3, 1],
-    //             chords: [],
-    //             lyrics: [],
-    //         },
-    //     ],
-    // },
-    // {
-    //     id: 'you-are-my-sunshine',
-    //     name: 'You Are My Sunshine',
-    //     lines: [
-    //         {
-    //             notes: [8, 1, 3, 5, 5],
-    //             chords: [],
-    //             lyrics: [],
-    //         },
-    //         {
-    //             notes: [5, 3, 5, 1, 1],
-    //             chords: [],
-    //             lyrics: [],
-    //         },
-    //         {
-    //             notes: [1, 3, 5, 6, 10],
-    //             chords: [],
-    //             lyrics: [],
-    //         },
-    //         {
-    //             notes: [10, 8, 6, 5],
-    //             chords: [],
-    //             lyrics: [],
-    //         },
-    //         {
-    //             notes: [1, 3, 5, 6, 10],
-    //             chords: [],
-    //             lyrics: [],
-    //         },
-    //         {
-    //             notes: [10, 8, 6, 5, 1],
-    //             chords: [],
-    //             lyrics: [],
-    //         },
-    //         {
-    //             notes: [1, 3, 5, 6, 3, 3, 5, 1],
-    //             chords: [],
-    //             lyrics: [],
-    //         },
-    //     ],
-    // },
-    // {
-    //     id: 'aserrin-aserran',
-    //     name: 'Aserrin Aserran',
-    //     lines: [
-    //         {
-    //             notes: [8, 8, 13, 8, 8, 5],
-    //             chords: [],
-    //             lyrics: ['As-', '-er-', '-rin', null, 'as-', '-er-', '-ran'],
-    //         },
-    //         {
-    //             notes: [8, 8, 10, 8, 10, 12, 13],
-    //             chords: [],
-    //             lyrics: ['Los', 'ma-', '-der-', '-os', 'de', 'San', 'Juan'],
-    //         },
-    //         {
-    //             notes: [8, 8, 13, 8, 8, 5],
-    //             chords: [],
-    //             lyrics: ['Pi-', '-den', 'pan', null, 'no', 'les', 'dan'],
-    //         },
-    //         {
-    //             notes: [8, 8, 10, 8, 10, 12, 13],
-    //             chords: [],
-    //             lyrics: ['Pi-', '-den', 'que-', '-so', 'les', 'dan', 'hueso'],
-    //         },
-    //         {
-    //             notes: [8, 8, 13, 8, 8, 5],
-    //             chords: [],
-    //             lyrics: ['Pi-', '-den', 'vi-', '-no', 'si', 'les', 'dan'],
-    //         },
-    //         {
-    //             notes: [8, 8, 10, 8, 10, 12, 13],
-    //             chords: [],
-    //             lyrics: ['Se', 'ma-', '-re-', '-an', 'y', 'se', 'van'],
-    //         },
-    //     ],
-    // },
-    // {
-    //     id: 'pajaro-carpintero',
-    //     name: 'El Pajaro Carpintero',
-    //     lines: [
-    //         {
-    //             notes: [8, 8, 1, 8, 8, 1],
-    //             chords: [],
-    //             lyrics: ['Toc', 'toc', 'toc', 'Toc', 'toc', 'toc']
-    //         },
-    //         {
-    //             notes: [8, 8, 1, 8, 8, 1],
-    //             chords: [],
-    //             lyrics: ['Toc', 'toc', 'toc', 'Toc', 'toc', 'toc']
-    //         },
-    //         {
-    //             notes: [5, 6, 8, 8, 5, 1, 3, 5],
-    //             chords: [],
-    //             lyrics: ['El pajaro', 'carpin-', '-tero', 'pi-', '-co-', '-tea', 'sin pa-', '-rar']
-    //         },
-    //         {
-    //             notes: [5, 6, 8, 8, 1, 3, 1],
-    //             chords: [],
-    //             lyrics: ['Construy-', '-endo', 'su', 'casita', 'trabaja sin', 'reclam-', '-ar']
-    //         },
-    //         {
-    //             notes: [8, 10, 8, 5, 6, 5],
-    //             chords: [],
-    //             lyrics: ['Toc toc', 'toc', 'toc', 'Toc toc', 'toc', 'toc']
-    //         },
-    //         {
-    //             notes: [5, 3, 1, 3, 5],
-    //             chords: [],
-    //             lyrics: ['Con', 'su', 'pico a', 'picote-', '-ar']
-    //         },
-    //         {
-    //             notes: [8, 10, 8, 5, 6, 5],
-    //             chords: [],
-    //             lyrics: ['Toc toc', 'toc', 'toc', 'Toc toc', 'toc', 'toc']
-    //         },
-    //         {
-    //             notes: [5, 3, 1, 3, 1],
-    //             chords: [],
-    //             lyrics: ['Todo', 'el', 'dia sin', 'descans-', '-ar']
-    //         },
-    //         // {
-    //         //     notes: [5, 5, 10, 5, 5, 10],
-    //         //     chords: [],
-    //         //     lyrics: ['Toc', 'toc', 'toc', 'Toc', 'toc', 'toc']
-    //         // },
-    //         // {
-    //         //     notes: [5, 5, 10, 5, 5, 10],
-    //         //     chords: [],
-    //         //     lyrics: ['Toc', 'toc', 'toc', 'Toc', 'toc', 'toc']
-    //         // },
-    //         {
-    //             notes: [1, 3, 5, 5, 1, 10, 12, 1],
-    //             chords: [],
-    //             lyrics: ['El pajaro', 'carpin-', '-tero', 'pi-', '-co-', '-tea', 'sin pa-', '-rar']
-    //         },
-    //         {
-    //             notes: [1, 3, 5, 5, 10, 12, 10],
-    //             chords: [],
-    //             lyrics: ['Construy-', '-endo', 'su', 'casita', 'trabaja sin', 'reclam-', '-ar']
-    //         },
-    //         {
-    //             notes: [5, 6, 5, 1, 3, 1],
-    //             chords: [],
-    //             lyrics: ['Toc toc', 'toc', 'toc', 'Toc toc', 'toc', 'toc']
-    //         },
-    //         {
-    //             notes: [1, 12, 10, 12, 1],
-    //             chords: [],
-    //             lyrics: ['Con', 'su', 'pico a', 'picote-', '-ar']
-    //         },
-    //         {
-    //             notes: [5, 6, 5, 1, 3, 1],
-    //             chords: [],
-    //             lyrics: ['Toc toc', 'toc', 'toc', 'Toc toc', 'toc', 'toc']
-    //         },
-    //         {
-    //             notes: [1, 12, 10, 12, 10],
-    //             chords: [],
-    //             lyrics: ['Todo', 'el', 'dia sin', 'descans-', '-ar']
-    //         }
-    //     ]
-    // },
-    // {
-    //     id: 'yesterday',
-    //     name: 'Yesterday',
-    //     lines: [
-    //         {
-    //             notes: [1, 12, 5, 10, 10, 8, 6],
-    //             chords: [],
-    //             lyrics: ['Yesterday', 'all my', 'trouble seemed', 'so far', 'away', '', 'now it'],
-    //         },
-    //         {
-    //             notes: [8, 1, 1, 12, 10, 3, 6, 1],
-    //             chords: [],
-    //             lyrics: ['looks as though they\'re', 'here to', 'stay', '', 'oh I believe', 'in', 'yes-', '-terday'],
-    //         },
-    //         {
-    //             notes: [1, 12, 5, 10, 10, 8, 6],
-    //             chords: [],
-    //             lyrics: ['Suddenly', 'I\'m not', 'half the man', 'I used to', 'be', '', 'there\'s a'],
-    //         },
-    //         {
-    //             notes: [8, 1, 1, 12, 10, 3, 6, 1],
-    //             chords: [],
-    //             lyrics: ['shadow hanging', 'over me', '', 'oh', 'yesterday', 'came', 'sud-', '-denly'],
-    //         },
-    //         {
-    //             notes: [12, 5, 10, 5, 6, 3, 8, 1],
-    //             chords: [],
-    //             lyrics: ['Why', 'she', 'had', 'to', 'go I don\'t', 'know she', 'wouldn\'t', 'say'],
-    //         },
-    //         {
-    //             notes: [12, 5, 10, 5, 6, 3, 8, 1],
-    //             chords: [],
-    //             lyrics: ['I', 'said', 'some-', '-thing', 'wrong now I', 'long for', 'yesterday', '-ay -ay -ay'],
-    //         },
-    //         {
-    //             notes: [1, 12, 5, 10, 10, 8, 6],
-    //             chords: [],
-    //             lyrics: ['Yesterday', 'love was', 'such an easy', 'game to', 'play', '', 'now I'],
-    //         },
-    //         {
-    //             notes: [8, 1, 1, 12, 10, 3, 6, 1],
-    //             chords: [],
-    //             lyrics: ['need a place to', 'hide away', '', 'oh', 'I belie-', '-ve in', 'yes-', '-terday'],
-    //         },
-    //     ],
-    // },
-    // {
-    //     id: 'yesterday-1',
-    //     name: 'Yesterday &#9733;',
-    //     lines: [
-    //         {
-    //             notes: [[1, 5], [12, 3], [5, 12], [10, 5], [10, 5], 8, [6, 10]],
-    //             chords: [],
-    //             lyrics: ['Yesterday', 'all my', 'trouble seemed', 'so far', 'away', '', 'now it'],
-    //         },
-    //         {
-    //             notes: [[8, 12], [1, 8], [1, 8], [12, 3], [10, 5], [3, 1], [6, 10], [1, 5]],
-    //             chords: [],
-    //             lyrics: ['looks as though they\'re', 'here to', 'stay', '', 'oh I believe', 'in', 'yes-', '-terday'],
-    //         },
-    //         {
-    //             notes: [[1, 5], [12, 3], [5, 12], [10, 5], [10, 5], 8, [6, 10]],
-    //             chords: [],
-    //             lyrics: ['Suddenly', 'I\'m not', 'half the man', 'I used to', 'be', '', 'there\'s a'],
-    //         },
-    //         {
-    //             notes: [[8, 12], [1, 8], [1, 8], [12, 3], [10, 5], [3, 1], [6, 10], [1, 5]],
-    //             chords: [],
-    //             lyrics: ['shadow hanging', 'over me', '', 'oh', 'yesterday', 'came', 'sud-', '-denly'],
-    //         },
-    //         {
-    //             notes: [[12, 3], [5, 12], [10, 5], [5, 8], [6, 10], [3, 12], [8, 6], [1, 5]],
-    //             chords: [],
-    //             lyrics: ['Why', 'she', 'had', 'to', 'go I don\'t', 'know she', 'wouldn\'t', 'say'],
-    //         },
-    //         {
-    //             notes: [[12, 3], [5, 12], [10, 5], [5, 8], [6, 10], [3, 12], [8, 6], [1, 5]],
-    //             chords: [],
-    //             lyrics: ['I', 'said', 'some-', '-thing', 'wrong now I', 'long for', 'yesterday', '-ay -ay -ay'],
-    //         },
-    //         {
-    //             notes: [[1, 5], [12, 3], [5, 12], [10, 5], [10, 5], 8, [6, 10]],
-    //             chords: [],
-    //             lyrics: ['Yesterday', 'love was', 'such an easy', 'game to', 'play', '', 'now I'],
-    //         },
-    //         {
-    //             notes: [[8, 12], [1, 8], [1, 8], [12, 3], [10, 5], [3, 1], [6, 10], [1, 5]],
-    //             chords: [],
-    //             lyrics: ['need a place to', 'hide away', '', 'oh', 'I belie-', '-ve in', 'yes-', '-terday'],
-    //         },
-    //     ],
-    // },
-    // // {
-    // //     id: 'yesterday-2',
-    // //     name: 'Yesterday &#9733; &#9733;',
-    // //     lines: [
-    // //         {
-    // //             notes: [[1, 5, 8], [12, 3, 10], [5, 3, 12], [10, 1, 5, 12], [10, 1, 5, 12], 8, [6, 1, 10]],
-    // //             chords: [],
-    // //             lyrics: ['Yesterday', 'all my', 'trouble seemed', 'so far', 'away', '', 'now it'],
-    // //         },
-    // //         {
-    // //             notes: [[8, 6, 12], [1, 5, 8], [1, 5, 8], [12, 3], [10, 1, 12], [3, 1], [6, 1, 10], [1, 5, 8]],
-    // //             chords: [],
-    // //             lyrics: ['looks as though they\'re', 'here to', 'stay', '', 'oh I believe', 'in', 'yes-', '-terday'],
-    // //         },
-    // //         {
-    // //             notes: [[1, 5, 8], [12, 3, 10], [5, 3, 12], [10, 1, 5, 12], [10, 1, 5, 12], 8, [6, 1, 10]],
-    // //             chords: [],
-    // //             lyrics: ['Suddenly', 'I\'m not', 'half the man', 'I used to', 'be', '', 'there\'s a'],
-    // //         },
-    // //         {
-    // //             notes: [[8, 6, 12], [1, 5, 8], [1, 5, 8], [12, 3], [10, 1, 12], [3, 1], [6, 1, 10], [1, 5, 8]],
-    // //             chords: [],
-    // //             lyrics: ['shadow hanging', 'over me', '', 'oh', 'yesterday', 'came', 'sud-', '-denly'],
-    // //         },
-    // //         {
-    // //             notes: [[12, 3, 10], [5, 3, 12], [10, 1, 5, 12], [5, 3, 8, 12], [6, 1, 10], [3, 6, 10, 12], [8, 6, 12], [1, 5, 8]],
-    // //             chords: [],
-    // //             lyrics: ['Why', 'she', 'had', 'to', 'go I don\'t', 'know she', 'wouldn\'t', 'say'],
-    // //         },
-    // //         {
-    // //             notes: [[12, 3, 10], [5, 3, 12], [10, 1, 5, 12], [5, 3, 8, 12], [6, 1, 10], [3, 6, 10, 12], [8, 6, 12], [1, 5, 8]],
-    // //             chords: [],
-    // //             lyrics: ['I', 'said', 'some-', '-thing', 'wrong now I', 'long for', 'yesterday', '-ay -ay -ay'],
-    // //         },
-    // //         {
-    // //             notes: [[1, 5, 8], [12, 3, 10], [5, 3, 12], [10, 1, 5, 12], [10, 1, 5, 12], 8, [6, 1, 10]],
-    // //             chords: [],
-    // //             lyrics: ['Yesterday', 'love was', 'such an easy', 'game to', 'play', '', 'now I'],
-    // //         },
-    // //         {
-    // //             notes: [[8, 6, 12], [1, 5, 8], [1, 5, 8], [12, 3], [10, 1, 12], [3, 1], [6, 1, 10], [1, 5, 8]],
-    // //             chords: [],
-    // //             lyrics: ['need a place to', 'hide away', '', 'oh', 'I belie-', '-ve in', 'yes-', '-terday'],
-    // //         },
-    // //     ],
-    // // },
+    {
+        id: 'lightly-row',
+        name: 'Lightly Row',
+        versions: [
+            {
+                name: '',
+                id: '1',
+                level: 1,
+                lines: [
+                    {
+                        notes: [8, 5, 5, 6, 3, 3],
+                        chords: [],
+                        lyrics: [],
+                    },
+                    {
+                        notes: [1, 3, 5, 6, 8, 8, 8],
+                        chords: [],
+                        lyrics: [],
+                    },
+                    {
+                        notes: [8, 5, 5, 6, 3, 3],
+                        chords: [],
+                        lyrics: [],
+                    },
+                    {
+                        notes: [1, 5, 8, 8, 1, 1, 1],
+                        chords: [],
+                        lyrics: [],
+                    },
+                    {
+                        notes: [3, 3, 3, 3, 3, 5, 6],
+                        chords: [],
+                        lyrics: [],
+                    },
+                    {
+                        notes: [5, 5, 5, 5, 5, 6, 8],
+                        chords: [],
+                        lyrics: [],
+                    },
+                    {
+                        notes: [8, 5, 5, 6, 3, 3],
+                        chords: [],
+                        lyrics: [],
+                    },
+                    {
+                        notes: [1, 5, 8, 8, 1, 1, 1],
+                        chords: [],
+                        lyrics: [],
+                    },
+                ],
+            },
+        ],
+    },
+        {
+        id: 'song-of-the-wind',
+        name: 'Song of the Wind',
+        versions: [
+            {
+                name: '',
+                id: '1',
+                level: 1,
+                lines: [
+                    {
+                        notes: [1, 3, 5, 6, 8, 8, 8, 8, 8],
+                        chords: [],
+                        lyrics: [],
+                    },
+                    {
+                        notes: [10, 6, 1, 10, 8],
+                        chords: [],
+                        lyrics: [],
+                    },
+                    {
+                        notes: [10, 6, 1, 10, 8, 8],
+                        chords: [],
+                        lyrics: [],
+                    },
+                    {
+                        notes: [6, 6, 6, 6, 5, 5, 5, 5, 3, 3, 3],
+                        chords: [],
+                        lyrics: [],
+                    },
+                    {
+                        notes: [1, 5, 8, 8, 6, 6, 6, 6, 5],
+                        chords: [],
+                        lyrics: [],
+                    },
+                    {
+                        notes: [5, 5, 5, 3, 3, 3, 1],
+                        chords: [],
+                        lyrics: [],
+                    },
+                ],
+            },
+        ],
+    },
+    {
+        id: 'you-are-my-sunshine',
+        name: 'You Are My Sunshine',
+        versions: [
+            {
+                name: '',
+                id: '1',
+                level: 1,
+                lines: [
+                    {
+                        notes: [8, 1, 3, 5, 5],
+                        chords: [],
+                        lyrics: [],
+                    },
+                    {
+                        notes: [5, 3, 5, 1, 1],
+                        chords: [],
+                        lyrics: [],
+                    },
+                    {
+                        notes: [1, 3, 5, 6, 10],
+                        chords: [],
+                        lyrics: [],
+                    },
+                    {
+                        notes: [10, 8, 6, 5],
+                        chords: [],
+                        lyrics: [],
+                    },
+                    {
+                        notes: [1, 3, 5, 6, 10],
+                        chords: [],
+                        lyrics: [],
+                    },
+                    {
+                        notes: [10, 8, 6, 5, 1],
+                        chords: [],
+                        lyrics: [],
+                    },
+                    {
+                        notes: [1, 3, 5, 6, 3, 3, 5, 1],
+                        chords: [],
+                        lyrics: [],
+                    },
+                ],
+            },
+        ],
+    },
+    {
+        id: 'aserrin-aserran',
+        name: 'Aserrin Aserran',
+        versions: [
+            {
+                name: '',
+                id: '1',
+                level: 1,
+                lines: [
+                    {
+                        notes: [8, 8, 13, 8, 8, 5],
+                        chords: [],
+                        lyrics: ['As-', '-er-', '-rin', null, 'as-', '-er-', '-ran'],
+                    },
+                    {
+                        notes: [8, 8, 10, 8, 10, 12, 13],
+                        chords: [],
+                        lyrics: ['Los', 'ma-', '-der-', '-os', 'de', 'San', 'Juan'],
+                    },
+                    {
+                        notes: [8, 8, 13, 8, 8, 5],
+                        chords: [],
+                        lyrics: ['Pi-', '-den', 'pan', null, 'no', 'les', 'dan'],
+                    },
+                    {
+                        notes: [8, 8, 10, 8, 10, 12, 13],
+                        chords: [],
+                        lyrics: ['Pi-', '-den', 'que-', '-so', 'les', 'dan', 'hueso'],
+                    },
+                    {
+                        notes: [8, 8, 13, 8, 8, 5],
+                        chords: [],
+                        lyrics: ['Pi-', '-den', 'vi-', '-no', 'si', 'les', 'dan'],
+                    },
+                    {
+                        notes: [8, 8, 10, 8, 10, 12, 13],
+                        chords: [],
+                        lyrics: ['Se', 'ma-', '-re-', '-an', 'y', 'se', 'van'],
+                    },
+                ],
+            },
+        ],
+    },
+    {
+        id: 'pajaro-carpintero',
+        name: 'El Pajaro Carpintero',
+        versions: [
+            {
+                name: '',
+                id: '1',
+                level: 1,
+                lines: [
+                    {
+                        notes: [8, 8, 1, 8, 8, 1],
+                        chords: [],
+                        lyrics: ['Toc', 'toc', 'toc', 'Toc', 'toc', 'toc']
+                    },
+                    {
+                        notes: [8, 8, 1, 8, 8, 1],
+                        chords: [],
+                        lyrics: ['Toc', 'toc', 'toc', 'Toc', 'toc', 'toc']
+                    },
+                    {
+                        notes: [5, 6, 8, 8, 5, 1, 3, 5],
+                        chords: [],
+                        lyrics: ['El pajaro', 'carpin-', '-tero', 'pi-', '-co-', '-tea', 'sin pa-', '-rar']
+                    },
+                    {
+                        notes: [5, 6, 8, 8, 1, 3, 1],
+                        chords: [],
+                        lyrics: ['Construy-', '-endo', 'su', 'casita', 'trabaja sin', 'reclam-', '-ar']
+                    },
+                    {
+                        notes: [8, 10, 8, 5, 6, 5],
+                        chords: [],
+                        lyrics: ['Toc toc', 'toc', 'toc', 'Toc toc', 'toc', 'toc']
+                    },
+                    {
+                        notes: [5, 3, 1, 3, 5],
+                        chords: [],
+                        lyrics: ['Con', 'su', 'pico a', 'picote-', '-ar']
+                    },
+                    {
+                        notes: [8, 10, 8, 5, 6, 5],
+                        chords: [],
+                        lyrics: ['Toc toc', 'toc', 'toc', 'Toc toc', 'toc', 'toc']
+                    },
+                    {
+                        notes: [5, 3, 1, 3, 1],
+                        chords: [],
+                        lyrics: ['Todo', 'el', 'dia sin', 'descans-', '-ar']
+                    },
+                    // {
+                    //     notes: [5, 5, 10, 5, 5, 10],
+                    //     chords: [],
+                    //     lyrics: ['Toc', 'toc', 'toc', 'Toc', 'toc', 'toc']
+                    // },
+                    // {
+                    //     notes: [5, 5, 10, 5, 5, 10],
+                    //     chords: [],
+                    //     lyrics: ['Toc', 'toc', 'toc', 'Toc', 'toc', 'toc']
+                    // },
+                    {
+                        notes: [1, 3, 5, 5, 1, 10, 12, 1],
+                        chords: [],
+                        lyrics: ['El pajaro', 'carpin-', '-tero', 'pi-', '-co-', '-tea', 'sin pa-', '-rar']
+                    },
+                    {
+                        notes: [1, 3, 5, 5, 10, 12, 10],
+                        chords: [],
+                        lyrics: ['Construy-', '-endo', 'su', 'casita', 'trabaja sin', 'reclam-', '-ar']
+                    },
+                    {
+                        notes: [5, 6, 5, 1, 3, 1],
+                        chords: [],
+                        lyrics: ['Toc toc', 'toc', 'toc', 'Toc toc', 'toc', 'toc']
+                    },
+                    {
+                        notes: [1, 12, 10, 12, 1],
+                        chords: [],
+                        lyrics: ['Con', 'su', 'pico a', 'picote-', '-ar']
+                    },
+                    {
+                        notes: [5, 6, 5, 1, 3, 1],
+                        chords: [],
+                        lyrics: ['Toc toc', 'toc', 'toc', 'Toc toc', 'toc', 'toc']
+                    },
+                    {
+                        notes: [1, 12, 10, 12, 10],
+                        chords: [],
+                        lyrics: ['Todo', 'el', 'dia sin', 'descans-', '-ar']
+                    },
+                ],
+            },
+        ],
+    },
+    {
+        id: 'yesterday',
+        name: 'Yesterday',
+        versions: [
+            {
+                name: '',
+                id: '1',
+                level: 1,
+                lines: [
+                    {
+                        notes: [1, 12, 5, 10, 10, 8, 6],
+                        chords: [],
+                        lyrics: ['Yesterday', 'all my', 'trouble seemed', 'so far', 'away', '', 'now it'],
+                    },
+                    {
+                        notes: [8, 1, 1, 12, 10, 3, 6, 1],
+                        chords: [],
+                        lyrics: ['looks as though they\'re', 'here to', 'stay', '', 'oh I believe', 'in', 'yes-', '-terday'],
+                    },
+                    {
+                        notes: [1, 12, 5, 10, 10, 8, 6],
+                        chords: [],
+                        lyrics: ['Suddenly', 'I\'m not', 'half the man', 'I used to', 'be', '', 'there\'s a'],
+                    },
+                    {
+                        notes: [8, 1, 1, 12, 10, 3, 6, 1],
+                        chords: [],
+                        lyrics: ['shadow hanging', 'over me', '', 'oh', 'yesterday', 'came', 'sud-', '-denly'],
+                    },
+                    {
+                        notes: [12, 5, 10, 5, 6, 3, 8, 1],
+                        chords: [],
+                        lyrics: ['Why', 'she', 'had', 'to', 'go I don\'t', 'know she', 'wouldn\'t', 'say'],
+                    },
+                    {
+                        notes: [12, 5, 10, 5, 6, 3, 8, 1],
+                        chords: [],
+                        lyrics: ['I', 'said', 'some-', '-thing', 'wrong now I', 'long for', 'yesterday', '-ay -ay -ay'],
+                    },
+                    {
+                        notes: [1, 12, 5, 10, 10, 8, 6],
+                        chords: [],
+                        lyrics: ['Yesterday', 'love was', 'such an easy', 'game to', 'play', '', 'now I'],
+                    },
+                    {
+                        notes: [8, 1, 1, 12, 10, 3, 6, 1],
+                        chords: [],
+                        lyrics: ['need a place to', 'hide away', '', 'oh', 'I belie-', '-ve in', 'yes-', '-terday'],
+                    },
+                ],
+            },
+            {
+                name: '',
+                id: '2',
+                level: 2,
+                lines: [
+                    {
+                        notes: [[1, 5], [12, 3], [5, 12], [10, 5], [10, 5], 8, [6, 10]],
+                        chords: [],
+                        lyrics: ['Yesterday', 'all my', 'trouble seemed', 'so far', 'away', '', 'now it'],
+                    },
+                    {
+                        notes: [[8, 12], [1, 8], [1, 8], [12, 3], [10, 5], [3, 1], [6, 10], [1, 5]],
+                        chords: [],
+                        lyrics: ['looks as though they\'re', 'here to', 'stay', '', 'oh I believe', 'in', 'yes-', '-terday'],
+                    },
+                    {
+                        notes: [[1, 5], [12, 3], [5, 12], [10, 5], [10, 5], 8, [6, 10]],
+                        chords: [],
+                        lyrics: ['Suddenly', 'I\'m not', 'half the man', 'I used to', 'be', '', 'there\'s a'],
+                    },
+                    {
+                        notes: [[8, 12], [1, 8], [1, 8], [12, 3], [10, 5], [3, 1], [6, 10], [1, 5]],
+                        chords: [],
+                        lyrics: ['shadow hanging', 'over me', '', 'oh', 'yesterday', 'came', 'sud-', '-denly'],
+                    },
+                    {
+                        notes: [[12, 3], [5, 12], [10, 5], [5, 8], [6, 10], [3, 12], [8, 6], [1, 5]],
+                        chords: [],
+                        lyrics: ['Why', 'she', 'had', 'to', 'go I don\'t', 'know she', 'wouldn\'t', 'say'],
+                    },
+                    {
+                        notes: [[12, 3], [5, 12], [10, 5], [5, 8], [6, 10], [3, 12], [8, 6], [1, 5]],
+                        chords: [],
+                        lyrics: ['I', 'said', 'some-', '-thing', 'wrong now I', 'long for', 'yesterday', '-ay -ay -ay'],
+                    },
+                    {
+                        notes: [[1, 5], [12, 3], [5, 12], [10, 5], [10, 5], 8, [6, 10]],
+                        chords: [],
+                        lyrics: ['Yesterday', 'love was', 'such an easy', 'game to', 'play', '', 'now I'],
+                    },
+                    {
+                        notes: [[8, 12], [1, 8], [1, 8], [12, 3], [10, 5], [3, 1], [6, 10], [1, 5]],
+                        chords: [],
+                        lyrics: ['need a place to', 'hide away', '', 'oh', 'I belie-', '-ve in', 'yes-', '-terday'],
+                    },
+                ],
+            },
+            {
+                name: '',
+                id: '3',
+                level: 3,
+                lines: [
+                    {
+                        notes: [[1, 5, 8], [12, 3, 10], [5, 3, 12], [10, 1, 5, 12], [10, 1, 5, 12], 8, [6, 1, 10]],
+                        chords: [],
+                        lyrics: ['Yesterday', 'all my', 'trouble seemed', 'so far', 'away', '', 'now it'],
+                    },
+                    {
+                        notes: [[8, 6, 12], [1, 5, 8], [1, 5, 8], [12, 3], [10, 1, 12], [3, 1], [6, 1, 10], [1, 5, 8]],
+                        chords: [],
+                        lyrics: ['looks as though they\'re', 'here to', 'stay', '', 'oh I believe', 'in', 'yes-', '-terday'],
+                    },
+                    {
+                        notes: [[1, 5, 8], [12, 3, 10], [5, 3, 12], [10, 1, 5, 12], [10, 1, 5, 12], 8, [6, 1, 10]],
+                        chords: [],
+                        lyrics: ['Suddenly', 'I\'m not', 'half the man', 'I used to', 'be', '', 'there\'s a'],
+                    },
+                    {
+                        notes: [[8, 6, 12], [1, 5, 8], [1, 5, 8], [12, 3], [10, 1, 12], [3, 1], [6, 1, 10], [1, 5, 8]],
+                        chords: [],
+                        lyrics: ['shadow hanging', 'over me', '', 'oh', 'yesterday', 'came', 'sud-', '-denly'],
+                    },
+                    {
+                        notes: [[12, 3, 10], [5, 3, 12], [10, 1, 5, 12], [5, 3, 8, 12], [6, 1, 10], [3, 6, 10, 12], [8, 6, 12], [1, 5, 8]],
+                        chords: [],
+                        lyrics: ['Why', 'she', 'had', 'to', 'go I don\'t', 'know she', 'wouldn\'t', 'say'],
+                    },
+                    {
+                        notes: [[12, 3, 10], [5, 3, 12], [10, 1, 5, 12], [5, 3, 8, 12], [6, 1, 10], [3, 6, 10, 12], [8, 6, 12], [1, 5, 8]],
+                        chords: [],
+                        lyrics: ['I', 'said', 'some-', '-thing', 'wrong now I', 'long for', 'yesterday', '-ay -ay -ay'],
+                    },
+                    {
+                        notes: [[1, 5, 8], [12, 3, 10], [5, 3, 12], [10, 1, 5, 12], [10, 1, 5, 12], 8, [6, 1, 10]],
+                        chords: [],
+                        lyrics: ['Yesterday', 'love was', 'such an easy', 'game to', 'play', '', 'now I'],
+                    },
+                    {
+                        notes: [[8, 6, 12], [1, 5, 8], [1, 5, 8], [12, 3], [10, 1, 12], [3, 1], [6, 1, 10], [1, 5, 8]],
+                        chords: [],
+                        lyrics: ['need a place to', 'hide away', '', 'oh', 'I belie-', '-ve in', 'yes-', '-terday'],
+                    },
+                ],
+            },
+        ],
+    },
     {
         id: 'house-of-the-rising-sun',
         name: 'House of the Rising Sun',
