@@ -7,6 +7,8 @@ export const state = {
     transposition: null,
     transpositions: [],
     uniqueNotes: [],
+    version: 1,
+    versions: [],
 };
 
 export const setDoRenderChords = (doRenderChords = true) => {
@@ -47,4 +49,14 @@ export const setUniqueNotes = (uniqueNotes = []) => {
     const filteredUniqueNotes = uniqueNotes.filter((n) => n !== 0);
     state.uniqueNotes = filteredUniqueNotes;
     return state.uniqueNotes;
+};
+
+export const setVersion = (version = '') => {
+    state.version = `${version}`;
+    return state.version;
+};
+
+export const setVersions = (versions = []) => {
+    state.versions = versions;
+    return state.versions;
 };

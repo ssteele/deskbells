@@ -10,6 +10,7 @@ import {
 } from './elements.js';
 import {
     Instrument,
+    Line,
     Song,
 } from './models/index.js';
 import {
@@ -28,15 +29,18 @@ import {
     setTransposition,
     setTranspositions,
     setUniqueNotes,
+    setVersion,
+    setVersions,
     state,
 } from './state.js';
 
 // dom elements registry
 const notesListEl = document.getElementById('notes-list');
+const instrumentSelectEl = document.getElementById('instrument-select');
+const versionSelectEl = document.getElementById('version-select');
+const transpositionSelectEl = document.getElementById('transposition-select');
 const chordToggleEl = document.getElementById('chord-toggle');
 const lyricToggleEl = document.getElementById('lyric-toggle');
-const instrumentSelectEl = document.getElementById('instrument-select');
-const transpositionSelectEl = document.getElementById('transposition-select');
 const songSelectEl = document.getElementById('song-select');
 const songEl = document.getElementById('song');
 
@@ -147,10 +151,11 @@ const transpose = (lines = [ new Line() ], instrument = new Instrument()) => {
 
 const loadSong = (songs, instruments, state) => {
     const instrument = getInstrument(instruments, state.instrumentId);
-    const song = getSong(songs, state.songId);
+    const song = new Song(getSong(songs, state.songId));
     const { versions } = song;
-    const { level } = state;
-    const { lines } = versions.find((s) => s.level === level) || versions[0];
+    setVersions(versions)
+    const { version } = state;
+    const { lines } = versions.find((s) => s.id === version) || versions[0];
     const alignment = state.transposition ?? transpose(lines, instrument);
     if (false === alignment) {
         return {};
@@ -189,6 +194,42 @@ const renderNotesList = (instrument = new Instrument(), uniqueNotes = []) => {
     `;
 };
 
+// instrument select
+const renderInstrumentSelect = (instruments) => {
+    const instrumentOptions = instruments.map((i) => {
+        return `<option value="${i.id}">${i.name}</option>`;
+    });
+    instrumentSelectEl.innerHTML = `
+        <select name="instruments" id="instruments">
+            ${instrumentOptions}
+        </select>
+    `;
+};
+
+// instrument select
+const renderVersionSelect = (versions) => {
+    const versionOptions = versions.map((v) => {
+        return `<option value="${v.id}">Level ${'&#9733;'.repeat(v.level)}</option>`;
+    });
+    versionSelectEl.innerHTML = `
+        <select name="versions" id="versions">
+            ${versionOptions}
+        </select>
+    `;
+};
+
+// transposition select
+const renderTranspositionSelect = (transpositions) => {
+    const transpositionOptions = transpositions.map((t) => {
+        return `<option value="${t}">Transpose +${t}</option>`;
+    });
+    transpositionSelectEl.innerHTML = `
+        <select name="transpositions" id="transpositions">
+            ${transpositionOptions}
+        </select>
+    `;
+};
+
 // chords toggle
 const renderChordToggle = () => {
     chordToggleEl.innerHTML = `
@@ -209,30 +250,6 @@ const renderLyricToggle = () => {
     `;
 };
 
-// instrument select
-const renderInstrumentSelect = (instruments) => {
-    const instrumentOptions = instruments.map((i) => {
-        return `<option value="${i.id}">${i.name}</option>`;
-    });
-    instrumentSelectEl.innerHTML = `
-        <select name="instruments" id="instruments">
-            ${instrumentOptions}
-        </select>
-    `;
-};
-
-// transposition select
-const renderTranspositionSelect = (transpositions) => {
-    const transpositionOptions = transpositions.map((t) => {
-        return `<option value="${t}">Transpose +${t}</option>`;
-    });
-    transpositionSelectEl.innerHTML = `
-        <select name="transpositions" id="transpositions">
-            ${transpositionOptions}
-        </select>
-    `;
-};
-
 // song select
 const renderSongOptions = (songs) => {
     const songOptions = songs.map((s) => {
@@ -244,6 +261,24 @@ const renderSongOptions = (songs) => {
         </select>
     `;
 };
+
+// handle instrument select
+instrumentSelectEl.addEventListener('change', (e) => {
+    setInstrumentId(e.target.value);
+    update(songs, instruments, state);
+});
+
+// handle version select
+versionSelectEl.addEventListener('change', (e) => {
+    setVersion(e.target.value);
+    update(songs, instruments, state);
+});
+
+// handle transposition select
+transpositionSelectEl.addEventListener('change', (e) => {
+    setTransposition(e.target.value);
+    update(songs, instruments, state);
+});
 
 // handle chord toggle
 chordToggleEl.addEventListener('change', (e) => {
@@ -257,23 +292,13 @@ lyricToggleEl.addEventListener('change', (e) => {
     update(songs, instruments, state);
 });
 
-// handle instrument select
-instrumentSelectEl.addEventListener('change', (e) => {
-    setInstrumentId(e.target.value);
-    update(songs, instruments, state);
-});
-
-// handle transposition select
-transpositionSelectEl.addEventListener('change', (e) => {
-    setTransposition(e.target.value);
-    update(songs, instruments, state);
-});
-
 // handle song select
 songSelectEl.addEventListener('change', (e) => {
     setSongId(e.target.value);
+    setVersion(null);
     setTransposition(null);
     update(songs, instruments, state);
+    renderVersionSelect(state.versions);
     renderTranspositionSelect(state.transpositions);
 });
 
@@ -283,4 +308,5 @@ renderLyricToggle();
 renderInstrumentSelect(instruments);
 renderSongOptions(songs)
 update(songs, instruments, state);
+renderVersionSelect(state.versions);
 renderTranspositionSelect(state.transpositions);

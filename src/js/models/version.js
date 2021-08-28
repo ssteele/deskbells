@@ -6,6 +6,7 @@ export class Version {
     lines = [
         new Line(),
     ];
+    name = '';
 
     constructor(obj) {
         Object.assign(this, obj);

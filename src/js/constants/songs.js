@@ -4,7 +4,8 @@ export const songs = [
         name: 'Twinkle Twinkle',
         versions: [
             {
-                id: '',
+                name: 'Basic',
+                id: 'basic',
                 level: 1,
                 lines: [
                     {
@@ -424,60 +425,68 @@ export const songs = [
     // //         },
     // //     ],
     // // },
-    // {
-    //     id: 'house-of-the-rising-sun',
-    //     name: 'House of the Rising Sun &#9733;',
-    //     lines: [
-    //         {
-    //             notes: [[10, 1], [1, 8], [3, 10], [6, 1]],
-    //             chords: [[10, 'm'], 1, 3, 6],
-    //             lyrics: ['There is a', 'house in', 'New Orle-', '-ans'],
-    //         },
-    //         {
-    //             notes: [[10, 1], [1, 8], [5, 12]],
-    //             chords: [[10, 'm'], 1, 5],
-    //             lyrics: ['they call the', 'Rising', 'Sun'],
-    //         },
-    //         {
-    //             notes: [[10, 1], [1, 8], [3, 10], [6, 10]],
-    //             chords: [[10, 'm'], 1, 3, 6],
-    //             lyrics: ['and it\'s been the', 'ruin of', 'many a poor', 'boy'],
-    //         },
-    //         {
-    //             notes: [[10, 1], [5, 12], [1, 5]],
-    //             chords: [[10, 'm'], 5, [10, 'm']],
-    //             lyrics: ['and God, I', 'know I\'m', 'one'],
-    //         },
-    //     ],
-    // },
-    // // {
-    // //     id: 'house-of-the-rising-sun',
-    // //     name: 'House of the Rising Sun &#9733; &#9733;',
-    // //     lines: [
-    // //         {
-    // //             // notes: [[10, 1, 5], [1, 5, 8], [3, 7, 10], [6, 10, 1]],
-    // //             notes: [[10, 1, 5], [1, 5, 8], [3, 10], [6, 10, 1]],
-    // //             chords: [],
-    // //             lyrics: ['There is a', 'house in', 'New Orle-', '-ans'],
-    // //         },
-    // //         {
-    // //             // notes: [[10, 1, 5], [1, 5, 8], [5, 9, 12]],
-    // //             notes: [[10, 1, 5], [1, 5, 8], [5, 12]],
-    // //             chords: [],
-    // //             lyrics: ['they call the', 'Rising', 'Sun'],
-    // //         },
-    // //         {
-    // //             // notes: [[10, 1, 5], [1, 5, 8], [3, 7, 10], [6, 10, 1]],
-    // //             notes: [[10, 1, 5], [1, 5, 8], [3, 10], [6, 10, 1]],
-    // //             chords: [],
-    // //             lyrics: ['and it\'s been the', 'ruin of', 'many a poor', 'boy'],
-    // //         },
-    // //         {
-    // //             // notes: [[10, 1, 5], [5, 9, 12], [10, 1, 5]],
-    // //             notes: [[10, 1, 5], [5, 12], [10, 1, 5]],
-    // //             chords: [],
-    // //             lyrics: ['and God, I', 'know I\'m', 'one'],
-    // //         },
-    // //     ],
-    // // },
+    {
+        id: 'house-of-the-rising-sun',
+        name: 'House of the Rising Sun',
+        versions: [
+            {
+                name: '',
+                id: 'two',
+                level: 2,
+                lines: [
+                    {
+                        notes: [[10, 1], [1, 8], [3, 10], [6, 1]],
+                        chords: [[10, 'm'], 1, 3, 6],
+                        lyrics: ['There is a', 'house in', 'New Orle-', '-ans'],
+                    },
+                    {
+                        notes: [[10, 1], [1, 8], [5, 12]],
+                        chords: [[10, 'm'], 1, 5],
+                        lyrics: ['they call the', 'Rising', 'Sun'],
+                    },
+                    {
+                        notes: [[10, 1], [1, 8], [3, 10], [6, 10]],
+                        chords: [[10, 'm'], 1, 3, 6],
+                        lyrics: ['and it\'s been the', 'ruin of', 'many a poor', 'boy'],
+                    },
+                    {
+                        notes: [[10, 1], [5, 12], [1, 5]],
+                        chords: [[10, 'm'], 5, [10, 'm']],
+                        lyrics: ['and God, I', 'know I\'m', 'one'],
+                    },
+                ],
+            },
+            {
+                name: '',
+                id: 'three',
+                level: 3,
+                lines: [
+                    {
+                        // notes: [[10, 1, 5], [1, 5, 8], [3, 7, 10], [6, 10, 1]],
+                        notes: [[10, 1, 5], [1, 5, 8], [3, 10], [6, 10, 1]],
+                        chords: [],
+                        lyrics: ['There is a', 'house in', 'New Orle-', '-ans'],
+                    },
+                    {
+                        // notes: [[10, 1, 5], [1, 5, 8], [5, 9, 12]],
+                        notes: [[10, 1, 5], [1, 5, 8], [5, 12]],
+                        chords: [],
+                        lyrics: ['they call the', 'Rising', 'Sun'],
+                    },
+                    {
+                        // notes: [[10, 1, 5], [1, 5, 8], [3, 7, 10], [6, 10, 1]],
+                        notes: [[10, 1, 5], [1, 5, 8], [3, 10], [6, 10, 1]],
+                        chords: [],
+                        lyrics: ['and it\'s been the', 'ruin of', 'many a poor', 'boy'],
+                    },
+                    {
+                        // notes: [[10, 1, 5], [5, 9, 12], [10, 1, 5]],
+                        notes: [[10, 1, 5], [5, 12], [10, 1, 5]],
+                        chords: [],
+                        lyrics: ['and God, I', 'know I\'m', 'one'],
+                    },
+                ],
+            },
+        ],
+    },
 ];
