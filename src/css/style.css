@@ -104,6 +104,10 @@ select {
     margin-bottom: 7.5rem;
 }
 
+.v-space-3 .chord {
+    margin-top: 10rem;
+}
+
 .unique-note {
     border-radius: 50%;
     display: inline-block;
