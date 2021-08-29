@@ -278,16 +278,16 @@ export const songs = [
                         chords: [],
                         lyrics: ['Todo', 'el', 'dia sin', 'descans-', '-ar']
                     },
-                    // {
-                    //     notes: [5, 5, 10, 5, 5, 10],
-                    //     chords: [],
-                    //     lyrics: ['Toc', 'toc', 'toc', 'Toc', 'toc', 'toc']
-                    // },
-                    // {
-                    //     notes: [5, 5, 10, 5, 5, 10],
-                    //     chords: [],
-                    //     lyrics: ['Toc', 'toc', 'toc', 'Toc', 'toc', 'toc']
-                    // },
+                    {
+                        notes: [5, 5, 10, 5, 5, 10],
+                        chords: [],
+                        lyrics: ['Toc', 'toc', 'toc', 'Toc', 'toc', 'toc']
+                    },
+                    {
+                        notes: [5, 5, 10, 5, 5, 10],
+                        chords: [],
+                        lyrics: ['Toc', 'toc', 'toc', 'Toc', 'toc', 'toc']
+                    },
                     {
                         notes: [1, 3, 5, 5, 1, 10, 12, 1],
                         chords: [],
@@ -506,25 +506,21 @@ export const songs = [
                 level: 3,
                 lines: [
                     {
-                        // notes: [[10, 1, 5], [1, 5, 8], [3, 7, 10], [6, 10, 1]],
                         notes: [[10, 1, 5], [1, 5, 8], [3, 10], [6, 10, 1]],
                         chords: [[10, 'm'], 1, 3, 6],
                         lyrics: ['There is a', 'house in', 'New Orle-', '-ans'],
                     },
                     {
-                        // notes: [[10, 1, 5], [1, 5, 8], [5, 9, 12]],
                         notes: [[10, 1, 5], [1, 5, 8], [5, 12]],
                         chords: [[10, 'm'], 1, 5],
                         lyrics: ['they call the', 'Rising', 'Sun'],
                     },
                     {
-                        // notes: [[10, 1, 5], [1, 5, 8], [3, 7, 10], [6, 10, 1]],
                         notes: [[10, 1, 5], [1, 5, 8], [3, 10], [6, 10, 1]],
                         chords: [[10, 'm'], 1, 3, 6],
                         lyrics: ['and it\'s been the', 'ruin of', 'many a poor', 'boy'],
                     },
                     {
-                        // notes: [[10, 1, 5], [5, 9, 12], [10, 1, 5]],
                         notes: [[10, 1, 5], [5, 12], [10, 1, 5]],
                         chords: [[10, 'm'], 5, [10, 'm']],
                         lyrics: ['and God, I', 'know I\'m', 'one'],
