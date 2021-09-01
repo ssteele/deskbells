@@ -149,7 +149,7 @@ export const songs = [
                 lines: [
                     {
                         notes: [8, 1, 3, 5, 5],
-                        chords: [8, 0, 0, 0, 0],
+                        chords: [1, 0, 0, 0, 0],
                         lyrics: ['You', 'are', 'my', 'sun-', '-shine'],
                     },
                     {
@@ -159,27 +159,27 @@ export const songs = [
                     },
                     {
                         notes: [1, 3, 5, 6, 10],
-                        chords: [0, 0, 0, 1, 0],
+                        chords: [0, 0, 0, 6, 0],
                         lyrics: ['You', 'make', 'me', 'hap-', '-py'],
                     },
                     {
                         notes: [10, 8, 6, 5],
-                        chords: [0, 0, 0, 8],
+                        chords: [0, 0, 0, 1],
                         lyrics: ['when', 'skies', 'are', 'gray'],
                     },
                     {
                         notes: [1, 3, 5, 6, 10],
-                        chords: [0, 0, 0, 1, 0],
+                        chords: [0, 0, 0, 6, 0],
                         lyrics: ['You\'ll', 'nev-', '-er', 'know', 'dear'],
                     },
                     {
                         notes: [10, 8, 6, 5, 1],
-                        chords: [0, 0, 0, 8, 0],
+                        chords: [0, 0, 0, 1, 0],
                         lyrics: ['how', 'much', 'I', 'love', 'you'],
                     },
                     {
                         notes: [1, 3, 5, 6, 3, 3, 5, 1],
-                        chords: [0, 0, 0, 0, 3, 0, 8, 0],
+                        chords: [0, 0, 0, 0, 8, 0, 1, 0],
                         lyrics: ['Please', 'don\'t', 'take', 'my', 'sun-', '-shine', 'a-', '-way'],
                     },
                 ],
