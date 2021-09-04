@@ -470,6 +470,109 @@ export const songs = [
         ],
     },
     {
+        id: 'moon-river',
+        name: 'Moon River',
+        versions: [
+            {
+                name: '',
+                id: '2',
+                level: 2,
+                lines: [
+                    {
+                        notes: [[8, 5], [3, 5], 1],
+                        chords: [1, [10, 'm'], 0],
+                        lyrics: ['Moon', 'Riv-', '-er'],
+                    },
+                    {
+                        notes: [12, 10, 8, 6, 8],
+                        chords: [6, 0, 0, 0, 1],
+                        lyrics: ['wid-', '-er', 'than', 'a', 'mile'],
+                    },
+                    {
+                        notes: [1, 12, 10, 8, 6, 8],
+                        chords: [0, 6, 0, 0, 0, 1],
+                        lyrics: ['I\'m', 'cross-', '-ing', 'you', 'in', 'style'],
+                    },
+                    {
+                        notes: [1, 3, 3],
+                        chords: [0, [3, 'm', '6'], [5, '7']],
+                        lyrics: ['some', 'day', ''],
+                    },
+                    {
+                        notes: [5, 1, 8, 5],
+                        chords: [[5, '7'], [10, 'm'], [1, '7'], 0],
+                        lyrics: ['Old', 'dream', 'mak-', '-er'],
+                    },
+                    {
+                        notes: [3, 1, 8, 5],
+                        chords: [0, 6, [12, '&#9837;', '7']],
+                        lyrics: ['you', 'heart', 'break-', '-er'],
+                    },
+                    {
+                        notes: [3, 1, 5, 8, [1, 5], 12],
+                        chords: [0, [10, 'm', '7'], 0, 0, [6, '&#9839;', 'dim'], [12, '7']],
+                        lyrics: ['where-', '-ev-', '-er', 'you\'re', 'go-', '-ing'],
+                    },
+                    {
+                        notes: [10, 12, 10, [8, 5], [10, 6], 10],
+                        chords: [0, [5, 'm', '7'], [10, '7'], 0, [3, 'm', '7'], [8, '7']],
+                        lyrics: ['I\'m', 'go-', '-ing', 'your', 'way', ''],
+                    },
+                    {
+                        notes: [[8, 5], [3, 5], 1],
+                        chords: [1, [10, 'm'], 0],
+                        lyrics: ['Two', 'drift-', '-ers'],
+                    },
+                    {
+                        notes: [12, 10, 8, 6, 8],
+                        chords: [6, 0, 0, 0, 1],
+                        lyrics: ['off', 'to', 'see', 'the', 'world'],
+                    },
+                    {
+                        notes: [1, 12, 10, 8, 6, 8],
+                        chords: [0, 6, 0, 0, 0, 1],
+                        lyrics: ['There\'s', 'such', 'a', 'lot', 'of', 'world'],
+                    },
+                    {
+                        notes: [1, 3, 3],
+                        chords: [0, [3, 'm', '6'], [5, '7']],
+                        lyrics: ['too', 'see', ''],
+                    },
+                    {
+                        notes: [5, 1, 5, 8, [10, 1]],
+                        chords: [0, [10, 'm'], [10, 'm', '7'], 0, [10, 'm', '6']],
+                        lyrics: ['We\'re', 'af-', '-ter', 'the', 'same'],
+                    },
+                    {
+                        notes: [[3, 10], 1, 8, 8],
+                        chords: [[6, '7'], 0, 1, 6],
+                        lyrics: ['rain-', '-bow\'s', 'end', ''],
+                    },
+                    {
+                        notes: [12, 10, 8, 6, 8, 8],
+                        chords: [0, 0, 0, 0, 1, 6],
+                        lyrics: ['wait-', '-ing', '\'round', 'the', 'bend', ''],
+                    },
+                    {
+                        notes: [1, 12, 10, 8, 6, 8],
+                        chords: [0, 0, 0, 0, 0, [5, 'm']],
+                        lyrics: ['my', 'Huck-', '-le-', '-ber-', '-ry', 'friend'],
+                    },
+                    {
+                        notes: [1, [10, 1], 3, [3, 12]],
+                        chords: [[10, 'm'], [3, 'm', '7'], 0, [8, '7']],
+                        lyrics: ['Moon', 'Riv-', '-er', ''],
+                    },
+                    {
+                        notes: [5, 1, 1, 1, 1],
+                        chords: [0, 6, [5, 'm'], [3, 'm'], 1],
+                        lyrics: ['and', 'me', '', '', ''],
+                    },
+                ],
+            },
+        ],
+    },
+    {
         id: 'house-of-the-rising-sun',
         name: 'House of the Rising Sun',
         versions: [
