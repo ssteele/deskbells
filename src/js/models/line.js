@@ -1,6 +1,6 @@
 export class Line {
-    notes = [];
     chords = [];
+    notes = [];
     lyrics = ['No valid transpositions for selected instrument'];
 
     constructor(obj) {
