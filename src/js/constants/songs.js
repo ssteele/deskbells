@@ -1,11 +1,13 @@
 export const songs = [
     {
         id: 'twinkle-twinkle',
+        isActive: true,
         name: 'Twinkle Twinkle',
         versions: [
             {
                 name: '',
                 id: '1',
+                isActive: true,
                 level: 1,
                 lines: [
                     {
@@ -44,11 +46,13 @@ export const songs = [
     },
     {
         id: 'lightly-row',
+        isActive: true,
         name: 'Lightly Row',
         versions: [
             {
                 name: '',
                 id: '1',
+                isActive: true,
                 level: 1,
                 lines: [
                     {
@@ -97,11 +101,13 @@ export const songs = [
     },
         {
         id: 'song-of-the-wind',
+        isActive: true,
         name: 'Song of the Wind',
         versions: [
             {
                 name: '',
                 id: '1',
+                isActive: true,
                 level: 1,
                 lines: [
                     {
@@ -140,11 +146,13 @@ export const songs = [
     },
     {
         id: 'you-are-my-sunshine',
+        isActive: true,
         name: 'You Are My Sunshine',
         versions: [
             {
                 name: '',
                 id: '1',
+                isActive: true,
                 level: 1,
                 lines: [
                     {
@@ -188,11 +196,13 @@ export const songs = [
     },
     {
         id: 'aserrin-aserran',
+        isActive: true,
         name: 'Aserrin Aserran',
         versions: [
             {
                 name: '',
                 id: '1',
+                isActive: true,
                 level: 1,
                 lines: [
                     {
@@ -231,11 +241,13 @@ export const songs = [
     },
     {
         id: 'pajaro-carpintero',
+        isActive: true,
         name: 'El Pajaro Carpintero',
         versions: [
             {
                 name: '',
                 id: '1',
+                isActive: true,
                 level: 1,
                 lines: [
                     {
@@ -324,11 +336,13 @@ export const songs = [
     },
     {
         id: 'yesterday',
+        isActive: true,
         name: 'Yesterday',
         versions: [
             {
                 name: '',
                 id: '1',
+                isActive: true,
                 level: 1,
                 lines: [
                     {
@@ -376,6 +390,7 @@ export const songs = [
             {
                 name: '',
                 id: '2',
+                isActive: true,
                 level: 2,
                 lines: [
                     {
@@ -423,6 +438,7 @@ export const songs = [
             {
                 name: '',
                 id: '3',
+                isActive: true,
                 level: 3,
                 lines: [
                     {
@@ -471,11 +487,13 @@ export const songs = [
     },
     {
         id: 'moon-river',
+        isActive: true,
         name: 'Moon River',
         versions: [
             {
                 name: '',
                 id: '2',
+                isActive: true,
                 level: 2,
                 lines: [
                     {
@@ -574,11 +592,13 @@ export const songs = [
     },
     {
         id: 'house-of-the-rising-sun',
+        isActive: true,
         name: 'House of the Rising Sun',
         versions: [
             {
                 name: '',
                 id: '2',
+                isActive: true,
                 level: 2,
                 lines: [
                     {
@@ -606,6 +626,7 @@ export const songs = [
             {
                 name: '',
                 id: '3',
+                isActive: true,
                 level: 3,
                 lines: [
                     {
