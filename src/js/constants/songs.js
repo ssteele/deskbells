@@ -112,7 +112,12 @@ export const songs = [
                 lines: [
                     {
                         chords: [],
-                        notes: [1, 3, 5, 6, 8, 8, 8, 8, 8],
+                        notes: [1, 3, 5, 6],
+                        lyrics: [],
+                    },
+                    {
+                        chords: [],
+                        notes: [8, 8, 8, 8],
                         lyrics: [],
                     },
                     {
@@ -122,22 +127,42 @@ export const songs = [
                     },
                     {
                         chords: [],
-                        notes: [10, 6, 1, 10, 8, 8],
+                        notes: [10, 6, 1, 10, 8],
                         lyrics: [],
                     },
                     {
                         chords: [],
-                        notes: [6, 6, 6, 6, 5, 5, 5, 5, 3, 3, 3],
+                        notes: [8, 6, 6, 6],
                         lyrics: [],
                     },
                     {
                         chords: [],
-                        notes: [1, 5, 8, 8, 6, 6, 6, 6, 5],
+                        notes: [6, 5, 5, 5],
                         lyrics: [],
                     },
                     {
                         chords: [],
-                        notes: [5, 5, 5, 3, 3, 3, 1],
+                        notes: [5, 3, 3, 3],
+                        lyrics: [],
+                    },
+                    {
+                        chords: [],
+                        notes: [1, 5, 8],
+                        lyrics: [],
+                    },
+                    {
+                        chords: [],
+                        notes: [8, 6, 6, 6],
+                        lyrics: [],
+                    },
+                    {
+                        chords: [],
+                        notes: [6, 5, 5, 5],
+                        lyrics: [],
+                    },
+                    {
+                        chords: [],
+                        notes: [5, 3, 3, 3, 1],
                         lyrics: [],
                     },
                 ],
