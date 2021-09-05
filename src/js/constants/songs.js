@@ -211,9 +211,14 @@ export const songs = [
                         lyrics: ['how', 'much', 'I', 'love', 'you'],
                     },
                     {
-                        chords: [0, 0, 0, 0, 8, 0, 1, 0],
-                        notes: [1, 3, 5, 6, 3, 3, 5, 1],
-                        lyrics: ['Please', 'don\'t', 'take', 'my', 'sun-', '-shine', 'a-', '-way'],
+                        chords: [0, 0, 0, 0],
+                        notes: [1, 3, 5, 6],
+                        lyrics: ['Please', 'don\'t', 'take', 'my'],
+                    },
+                    {
+                        chords: [8, 0, 1, 0],
+                        notes: [3, 3, 5, 1],
+                        lyrics: ['sun-', '-shine', 'a-', '-way'],
                     },
                 ],
             },
