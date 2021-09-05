@@ -153,9 +153,10 @@ const loadSong = (songs, instruments, state) => {
     const instrument = getInstrument(instruments, state.instrumentId);
     const song = new Song(getSong(songs, state.songId));
     const { versions } = song;
-    setVersions(versions)
+    const activeVersions = versions.filter((v) => v.isActive);
+    setVersions(activeVersions)
     const { version } = state;
-    const { lines } = versions.find((s) => s.id === version) || versions[0];
+    const { lines } = activeVersions.find((s) => s.id === version) || activeVersions[0];
     const alignment = state.transposition ?? transpose(lines, instrument);
     if (false === alignment) {
         return {};
@@ -208,7 +209,9 @@ const renderInstrumentSelect = (instruments) => {
 
 // instrument select
 const renderVersionSelect = (versions) => {
-    const versionOptions = versions.map((v) => {
+    const versionOptions = versions.filter((v) => {
+        return v.isActive;
+    }).map((v) => {
         const name = v.name || 'Level';
         let label = `${name} ${'&#9733;'.repeat(v.level)}`;
         return `<option value="${v.id}">${label}</option>`;
