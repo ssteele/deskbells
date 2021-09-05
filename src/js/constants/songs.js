@@ -438,7 +438,7 @@ export const songs = [
             {
                 name: '',
                 id: '3',
-                isActive: true,
+                isActive: false,
                 level: 3,
                 lines: [
                     {
@@ -626,7 +626,7 @@ export const songs = [
             {
                 name: '',
                 id: '3',
-                isActive: true,
+                isActive: false,
                 level: 3,
                 lines: [
                     {
