@@ -12,7 +12,15 @@ export const getInstrument = (instruments = [], instrumentId) => {
 
 export const getSong = (songs = [], songId) => {
     return songs.find((s) => {
-        return s.id === songId;
+        // get the selected song so long as it's active
+        if (s.id === songId) {
+            const { versions } = s;
+            return s.isActive && versions.some((v) => v.isActive);
+        }
+    }) || songs.find((s) => {
+        // otherwise get the first active song
+        const { versions } = s;
+        return s.isActive && versions.some((v) => v.isActive);
     }) || new Song();
 };
 

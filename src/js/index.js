@@ -258,7 +258,10 @@ const renderLyricToggle = () => {
 // song select
 const renderSongOptions = (songs) => {
     const songOptions = songs.filter((s) => {
-        return s.isActive;
+        if (s.isActive) {
+            const { versions } = s;
+            return versions.some((v) => v.isActive);
+        }
     }).map((s) => {
         return `<option value="${s.id}">${s.name}</option>`;
     });
