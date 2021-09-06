@@ -683,6 +683,34 @@ export const songs = [
             },
             {
                 name: '',
+                id: '3',
+                isActive: true,
+                level: 3,
+                lines: [
+                    {
+                        chords: [0, [10, 'm'], 0, 1, 0, 3, 0, 6],
+                        notes: [5, [10, 1], 12, [1, 8], 5, [3, 10], 10, [6, 1]],
+                        lyrics: ['There', 'is', 'a', 'house', 'in', 'New', 'Orle-', '-ans'],
+                    },
+                    {
+                        chords: [0, [10, 'm'], 0, 1, 0, 5],
+                        notes: [10, [10, 1], 10, [1, 8], 3, [5, 12]],
+                        lyrics: ['they', 'call', 'the', 'Ris-', '-ing', 'Sun'],
+                    },
+                    {
+                        chords: [0, [10, 'm'], 0, 1, 0, 3, 0, 6],
+                        notes: [10, [10, 1], 10, [1, 8], 3, [3, 10], 10, [6, 10]],
+                        lyrics: ['and it\'s', 'been', 'the', 'ruin', 'of', 'many', 'a poor', 'boy'],
+                    },
+                    {
+                        chords: [0, [10, 'm'], 0, 5, 0, [10, 'm']],
+                        notes: [5, [10, 1], 10, [5, 12], 12, [1, 5]],
+                        lyrics: ['and', 'God', 'I', 'know', 'I\'m', 'one'],
+                    },
+                ],
+            },
+            {
+                name: '',
                 id: '4',
                 isActive: false,
                 level: 4,
