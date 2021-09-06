@@ -632,9 +632,14 @@ export const songs = [
                 level: 1,
                 lines: [
                     {
-                        chords: [0, [10, 'm'], 0, 1, 0, 3, 0, 6],
-                        notes: [5, 10, 12, 1, 5, 3, 10, 1],
-                        lyrics: ['There', 'is', 'a', 'house', 'in', 'New', 'Orle-', '-ans'],
+                        chords: [0, [10, 'm'], 0, 1],
+                        notes: [5, 10, 12, 1],
+                        lyrics: ['There', 'is', 'a', 'house'],
+                    },
+                    {
+                        chords: [0, 3, 0, 6],
+                        notes: [5, 3, 10, 1],
+                        lyrics: ['in', 'New', 'Orle-', '-ans'],
                     },
                     {
                         chords: [0, [10, 'm'], 0, 1, 0, 5],
@@ -642,9 +647,14 @@ export const songs = [
                         lyrics: ['they', 'call', 'the', 'Ris-', '-ing', 'Sun'],
                     },
                     {
-                        chords: [0, [10, 'm'], 0, 1, 0, 3, 0, 6],
-                        notes: [10, 10, 10, 8, 3, 5, 10, 1],
-                        lyrics: ['and it\'s', 'been', 'the', 'ruin', 'of', 'many', 'a poor', 'boy'],
+                        chords: [0, [10, 'm'], 0, 1],
+                        notes: [10, 10, 10, 8],
+                        lyrics: ['and it\'s', 'been', 'the', 'ruin'],
+                    },
+                    {
+                        chords: [0, 3, 0, 6],
+                        notes: [3, 5, 10, 1],
+                        lyrics: ['of', 'many', 'a poor', 'boy'],
                     },
                     {
                         chords: [0, [10, 'm'], 0, 5, 0, [10, 'm']],
@@ -688,9 +698,14 @@ export const songs = [
                 level: 3,
                 lines: [
                     {
-                        chords: [0, [10, 'm'], 0, 1, 0, 3, 0, 6],
-                        notes: [5, [10, 1], 12, [1, 8], 5, [3, 10], 10, [6, 1]],
-                        lyrics: ['There', 'is', 'a', 'house', 'in', 'New', 'Orle-', '-ans'],
+                        chords: [0, [10, 'm'], 0, 1],
+                        notes: [5, [10, 1], 12, [1, 8]],
+                        lyrics: ['There', 'is', 'a', 'house'],
+                    },
+                    {
+                        chords: [0, 3, 0, 6],
+                        notes: [5, [3, 10], 10, [6, 1]],
+                        lyrics: ['in', 'New', 'Orle-', '-ans'],
                     },
                     {
                         chords: [0, [10, 'm'], 0, 1, 0, 5],
@@ -698,9 +713,14 @@ export const songs = [
                         lyrics: ['they', 'call', 'the', 'Ris-', '-ing', 'Sun'],
                     },
                     {
-                        chords: [0, [10, 'm'], 0, 1, 0, 3, 0, 6],
-                        notes: [10, [10, 1], 10, [1, 8], 3, [3, 10], 10, [6, 10]],
-                        lyrics: ['and it\'s', 'been', 'the', 'ruin', 'of', 'many', 'a poor', 'boy'],
+                        chords: [0, [10, 'm'], 0, 1],
+                        notes: [10, [10, 1], 10, [1, 8]],
+                        lyrics: ['and it\'s', 'been', 'the', 'ruin'],
+                    },
+                    {
+                        chords: [0, 3, 0, 6],
+                        notes: [3, [3, 10], 10, [6, 10]],
+                        lyrics: ['of', 'many', 'a poor', 'boy'],
                     },
                     {
                         chords: [0, [10, 'm'], 0, 5, 0, [10, 'm']],
