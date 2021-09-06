@@ -1,4 +1,5 @@
 import {
+    chords,
     instruments,
     songs,
 } from './constants/index.js';
@@ -59,11 +60,11 @@ const getCurrentEl = (lineEl) => {
     return currentEl;
 };
 
-const transformChord = (notesMap = [], chord = []) => {
+const transformChord = (chordsMap = [], chord = []) => {
     let mtdChord = (Array.isArray(chord)) ? chord : [ chord ];
     const [chordIndex, ...symbols] = mtdChord;
     if (chordIndex) {
-        const { note: root } = notesMap.find((n) => {
+        const { note: root } = chordsMap.find((n) => {
             return n.index === chordIndex;
         });
         if (root) {
@@ -73,16 +74,16 @@ const transformChord = (notesMap = [], chord = []) => {
     return '';
 };
 
-const renderNote = (lineEl, notesMap, noteIndex = 1, chord = []) => {
+const renderNote = (lineEl, notesMap = [], noteIndex = 1, chordsMap = [], chord = []) => {
     const { note } = notesMap.find((n) => {
         return n.index === noteIndex;
     });
-    const transformedChord = transformChord(notesMap, chord);
+    const transformedChord = transformChord(chordsMap, chord);
     lineEl.append(createNoteElement(note, transformedChord));
     return getCurrentEl(lineEl);
 };
 
-const renderNotes = (lineEl, notesMap, notes = [], chord = []) => {
+const renderNotes = (lineEl, notesMap = [], notes = [], chordsMap = [], chord = []) => {
     const transformedNotes = notes
         .sort((a, b) => a - b)
         .map((noteIndex) => {
@@ -90,7 +91,7 @@ const renderNotes = (lineEl, notesMap, notes = [], chord = []) => {
                 return n.index === noteIndex;
             }) || {}).note;
         });
-    const transformedChord = transformChord(notesMap, chord);
+    const transformedChord = transformChord(chordsMap, chord);
     lineEl.append(createMultiNoteElement(transformedNotes, transformedChord));
     return getCurrentEl(lineEl);
 };
@@ -108,6 +109,7 @@ const renderLine = (songEl) => {
 const renderSong = (
     lines = [ new Line() ],
     instrument = new Instrument(),
+    chordsMap = [],
     {
         doRenderChords = true,
         doRenderLyrics = true,
@@ -124,9 +126,9 @@ const renderSong = (
         lineEl = renderLine(songEl);
         for (let [note, chord] of zip(notes, mtdChords)) {
             if (Array.isArray(note)) {
-                renderNotes(lineEl, notesMap, note, chord);
+                renderNotes(lineEl, notesMap, note, chordsMap, chord);
             } else {
-                renderNote(lineEl, notesMap, note, chord);
+                renderNote(lineEl, notesMap, note, chordsMap, chord);
             }
         }
 
@@ -170,11 +172,12 @@ const loadSong = (songs, instruments, state) => {
     };
 };
 
-const update = (songs, instruments, state) => {
+const update = (songs, instruments, chords, state) => {
     const { lines = [ new Line() ], instrument = new Instrument() } = loadSong(songs, instruments, state);
+    const { chordsMap } = chords;
     const uniqueNotes = setUniqueNotes(getUniqueNotes(lines));
     renderNotesList(instrument, uniqueNotes);
-    renderSong(lines, instrument, state);
+    renderSong(lines, instrument, chordsMap, state);
 }
 
 // notes list
@@ -275,31 +278,31 @@ const renderSongOptions = (songs) => {
 // handle instrument select
 instrumentSelectEl.addEventListener('change', (e) => {
     setInstrumentId(e.target.value);
-    update(songs, instruments, state);
+    update(songs, instruments, chords, state);
 });
 
 // handle version select
 versionSelectEl.addEventListener('change', (e) => {
     setVersion(e.target.value);
-    update(songs, instruments, state);
+    update(songs, instruments, chords, state);
 });
 
 // handle transposition select
 transpositionSelectEl.addEventListener('change', (e) => {
     setTransposition(e.target.value);
-    update(songs, instruments, state);
+    update(songs, instruments, chords, state);
 });
 
 // handle chord toggle
 chordToggleEl.addEventListener('change', (e) => {
     setDoRenderChords(e.target.checked);
-    update(songs, instruments, state);
+    update(songs, instruments, chords, state);
 });
 
 // handle lyric toggle
 lyricToggleEl.addEventListener('change', (e) => {
     setDoRenderLyrics(e.target.checked);
-    update(songs, instruments, state);
+    update(songs, instruments, chords, state);
 });
 
 // handle song select
@@ -307,7 +310,7 @@ songSelectEl.addEventListener('change', (e) => {
     setSongId(e.target.value);
     setVersion(null);
     setTransposition(null);
-    update(songs, instruments, state);
+    update(songs, instruments, chords, state);
     renderVersionSelect(state.versions);
     renderTranspositionSelect(state.transpositions);
 });
@@ -317,6 +320,6 @@ renderChordToggle();
 renderLyricToggle();
 renderInstrumentSelect(instruments);
 renderSongOptions(songs)
-update(songs, instruments, state);
+update(songs, instruments, chords, state);
 renderVersionSelect(state.versions);
 renderTranspositionSelect(state.transpositions);

@@ -552,12 +552,12 @@ export const songs = [
                         lyrics: ['Old', 'dream', 'mak-', '-er'],
                     },
                     {
-                        chords: [0, 6, [12, '\u266D', '7'], 0],
+                        chords: [0, 6, [11, '7'], 0],
                         notes: [3, 1, 8, 5],
                         lyrics: ['you', 'heart', 'break-', '-er'],
                     },
                     {
-                        chords: [0, [10, 'm', '7'], 0, 0, [6, '\u266F', 'dim'], [12, '7']],
+                        chords: [0, [10, 'm', '7'], 0, 0, [7, 'dim'], [12, '7']],
                         notes: [3, 1, 5, 8, [1, 5], 12],
                         lyrics: ['where-', '-ev-', '-er', 'you\'re', 'go-', '-ing'],
                     },
