@@ -14,7 +14,7 @@ Fork the repo and map all the instruments in _your_ house. I dare you.
 
 The application lets you select any transpositions available for whatever diatonically or otherwise limited instrument you have sitting around in your playroom. This functionality makes me happy!  My kids haven't noticed yet. I point it out whenever I can. They still haven't noticed... yet :grin:
 
-What else? Oh yes, some songs have levels. One-star levels essentially show the notes you would sing, the tune as it were. Higher levels are more complex (read, more interesting) multiple-note situations that more resemble the chord backings overlaid. Those are overlaid so I can play guitar or piano along with. This makes me happy :grin:
+What else? Oh yes, some songs have levels. One-star levels essentially show the notes you would sing, the tune as it were. Higher levels are more complex (read, more interesting) multiple-note situations that more resemble the chord backings overlaid. Those chord backings are overlaid so I can play guitar or piano along with. This makes me happy :grin:
 
 Happy playing!
 
