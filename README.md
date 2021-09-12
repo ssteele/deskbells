@@ -4,7 +4,9 @@
 
 A small selection of songs have been transcribed to JSON. The web application renders song notes as colored dots with chord backings overlaid. The colors correspond to individual notes on common children's instruments that cover the `C-c` diatonic range - you know, only the white notes on the piano starting and ending with `C`.
 
-Do, a dear, a female dear. Yeah, those ones :slightly_smiling_face:
+> Do, a dear, a female dear.
+
+Yeah, ^^ those ones :slightly_smiling_face:
 
 We have [desk bells](https://rhythmband.com/collections/bells/products/8-note-kidsplay-desk-bell-set "Rhythm Band Instruments") in my house. They're a fantastic first instrument for kids. Also we have a [xylophone](https://www.agreatlifebrand.com/products-glockenspiel-xylophone-for-kids-best-for-your-little-musician "A Great Life"). Both are mapped. Kids change their mind a lot. There's an instrument dropdown for that.
 
