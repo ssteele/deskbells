@@ -45,6 +45,51 @@ export const songs = [
         ],
     },
     {
+        id: 'abcs',
+        isActive: true,
+        name: 'ABCs',
+        versions: [
+            {
+                name: '',
+                id: '1',
+                isActive: true,
+                level: 1,
+                lines: [
+                    {
+                        chords: [],
+                        notes: [[1, 5], [1, 5], [6, 10], [1, 5]],
+                        lyrics: ['a b', 'c d', 'e f', 'g'],
+                    },
+                    {
+                        chords: [],
+                        notes: [[6, 10], [1, 5], [8, 12], [1, 5]],
+                        lyrics: ['h i', 'j k', 'l m n o', 'p'],
+                    },
+                    {
+                        chords: [],
+                        notes: [[1, 5], [6, 10], [1, 5], [8, 12]],
+                        lyrics: ['q r', 's', 't u', 'v'],
+                    },
+                    {
+                        chords: [],
+                        notes: [[1, 5], [6, 10], [1, 5], [8, 12]],
+                        lyrics: ['w', 'x', 'y and', 'z'],
+                    },
+                    {
+                        chords: [],
+                        notes: [[1, 5], [1, 5], [6, 10], [1, 5]],
+                        lyrics: ['now i', 'know my', 'a b', 'c\'s'],
+                    },
+                    {
+                        chords: [],
+                        notes: [[6, 10], [1, 5], [8, 12], [1, 5]],
+                        lyrics: ['next time', 'won\'t you', 'sing with', 'me'],
+                    },
+                ],
+            },
+        ],
+    },
+    {
         id: 'lightly-row',
         isActive: true,
         name: 'Lightly Row',
