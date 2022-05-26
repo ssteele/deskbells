@@ -4,7 +4,7 @@
 
 A small selection of songs have been transcribed to JSON. The web application renders song notes as colored dots with chord backings overlaid. The colors correspond to individual notes on common children's instruments that cover the `C-c` diatonic range - you know, only the white notes on the piano starting and ending with `C`.
 
-> :musical_note: Do, a dear, a female dear :musical_note:
+> :musical_note: Doe, a dear, a female dear :musical_note:
 
 Yeah, ^^ those ones :slightly_smiling_face:
 
